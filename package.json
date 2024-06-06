@@ -1,0 +1,15 @@
+{
+  "name": "rvvup-node-openapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "npx openapi-generator-cli generate -g typescript-fetch -i https://docs.rvvup.com/openapi.yaml --additional-properties=npmName=rvvup-node-openapi,npmVersion=1.0.0,supportsES6=true,withInterfaces=true,stringEnums=true"
+  },
+  "keywords": [],
+  "author": "Rvvup <opensource@rvvup.com> (https://rvvup.com)",
+  "license": "MIT",
+  "optionalDependencies": {
+    "@openapitools/openapi-generator-cli": "2.13.4"
+  }
+}
