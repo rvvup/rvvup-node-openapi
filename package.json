@@ -1,15 +1,27 @@
 {
-  "name": "rvvup-node-openapi",
+  "name": "@rvvup/node-openapi",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "generate": "npx openapi-generator-cli generate -g typescript-fetch -i https://docs.rvvup.com/openapi.yaml --additional-properties=npmName=rvvup-node-openapi,npmVersion=1.0.0,supportsES6=true,withInterfaces=true,stringEnums=true"
+  "description": "NodeJS client for @rvvup/node-openapi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvvup/rvvup-node-openapi.git"
   },
-  "keywords": [],
-  "author": "Rvvup <opensource@rvvup.com> (https://rvvup.com)",
-  "license": "MIT",
-  "optionalDependencies": {
-    "@openapitools/openapi-generator-cli": "2.13.4"
+  "main": "dist/api.js",
+  "types": "dist/api.d.ts",
+  "scripts": {
+    "clean": "rm -Rf node_modules/ dist/",
+    "build": "tsc",
+    "test": "npm run build && node dist/api.js"
+  },
+  "author": "OpenAPI-Generator Contributors",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.42",
+    "@types/node": "^18",
+    "@types/request": "^2.48.12",
+    "typescript": "^5"
   }
 }

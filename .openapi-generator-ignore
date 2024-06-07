@@ -23,3 +23,9 @@
 #!docs/README.md
 
 git_push.sh
+.npmrc
+.npmignore
+
+tsconfig.json
+package.json
+.gitignore
