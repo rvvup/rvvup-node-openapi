@@ -14,6 +14,10 @@
 */
 export declare class ThemeColorsUpdateInput {
     /**
+    * Background color.
+    */
+    'background'?: string;
+    /**
     * Primary color.
     */
     'primary'?: string;

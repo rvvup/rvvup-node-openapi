@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { Webhook } from '../model/webhook';
 import { WebhookCreateInput } from '../model/webhookCreateInput';

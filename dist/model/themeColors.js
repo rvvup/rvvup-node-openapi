@@ -17,6 +17,10 @@ exports.ThemeColors = void 0;
 */
 class ThemeColors {
     /**
+    * Background color.
+    */
+    'background';
+    /**
     * Primary color.
     */
     'primary';
@@ -38,6 +42,11 @@ class ThemeColors {
     'primaryLight';
     static discriminator = undefined;
     static attributeTypeMap = [
+        {
+            "name": "background",
+            "baseName": "background",
+            "type": "string"
+        },
         {
             "name": "primary",
             "baseName": "primary",

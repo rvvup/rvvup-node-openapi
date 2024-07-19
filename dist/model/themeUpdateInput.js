@@ -16,6 +16,7 @@ exports.ThemeUpdateInput = void 0;
 * Theme update input
 */
 class ThemeUpdateInput {
+    'backgroundImage';
     'colors';
     /**
     * Whether the theme is the default theme that is used when no theme is specified.
@@ -28,6 +29,11 @@ class ThemeUpdateInput {
     'paymentMethodSelector';
     static discriminator = undefined;
     static attributeTypeMap = [
+        {
+            "name": "backgroundImage",
+            "baseName": "backgroundImage",
+            "type": "ThemeBackgroundImageUpdateInput"
+        },
         {
             "name": "colors",
             "baseName": "colors",

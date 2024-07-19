@@ -9,12 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ThemeBackgroundImage } from './themeBackgroundImage';
 import { ThemeColors } from './themeColors';
 import { ThemePaymentMethodSelector } from './themePaymentMethodSelector';
 /**
 * Theme object
 */
 export declare class Theme {
+    'backgroundImage'?: ThemeBackgroundImage;
     'colors': ThemeColors;
     /**
     * The datetime when the theme was created.

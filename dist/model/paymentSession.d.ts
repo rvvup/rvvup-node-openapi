@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 import { Address } from './address';
+import { CheckoutMode } from './checkoutMode';
 import { Customer } from './customer';
 import { Item } from './item';
 import { Money } from './money';
@@ -21,6 +22,7 @@ export declare class PaymentSession {
     * The ID of the checkout that the payment session was created from.
     */
     'checkoutId'?: string;
+    'checkoutMode': CheckoutMode;
     /**
     * The datetime when the payment session was created.
     */

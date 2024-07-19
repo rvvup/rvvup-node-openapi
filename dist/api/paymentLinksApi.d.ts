@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { PaymentLink } from '../model/paymentLink';
 import { PaymentLinkCreateInput } from '../model/paymentLinkCreateInput';

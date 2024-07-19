@@ -1,4 +1,5 @@
-/// <reference types="node" />
+export * from './accountStatementsApi';
+import { AccountStatementsApi } from './accountStatementsApi';
 export * from './checkoutTemplatesApi';
 import { CheckoutTemplatesApi } from './checkoutTemplatesApi';
 export * from './checkoutsApi';
@@ -21,4 +22,4 @@ export declare class HttpError extends Error {
     constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export { RequestFile } from '../model/models';
-export declare const APIS: (typeof CheckoutTemplatesApi | typeof CheckoutsApi | typeof PaymentLinksApi | typeof PaymentSessionsApi | typeof StatementExportsApi | typeof ThemesApi | typeof WebhooksApi)[];
+export declare const APIS: (typeof AccountStatementsApi | typeof CheckoutTemplatesApi | typeof CheckoutsApi | typeof PaymentLinksApi | typeof PaymentSessionsApi | typeof StatementExportsApi | typeof ThemesApi | typeof WebhooksApi)[];

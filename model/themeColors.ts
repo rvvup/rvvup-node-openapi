@@ -17,6 +17,10 @@ import { RequestFile } from './models';
 */
 export class ThemeColors {
     /**
+    * Background color.
+    */
+    'background'?: string;
+    /**
     * Primary color.
     */
     'primary': string;
@@ -40,6 +44,11 @@ export class ThemeColors {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "background",
+            "baseName": "background",
+            "type": "string"
+        },
         {
             "name": "primary",
             "baseName": "primary",

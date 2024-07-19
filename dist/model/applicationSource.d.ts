@@ -20,6 +20,7 @@ export declare enum ApplicationSource {
     DashboardPaymentLink,
     MagentoMoto,
     MagentoPaymentLink,
+    MagentoAxInvoice,
     PayNowInPerson,
     PayNowMoto,
     PayNowPaymentLink

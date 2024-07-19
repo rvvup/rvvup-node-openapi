@@ -23,6 +23,7 @@ export enum ApplicationSource {
     DashboardPaymentLink = <any> 'DASHBOARD_PAYMENT_LINK',
     MagentoMoto = <any> 'MAGENTO_MOTO',
     MagentoPaymentLink = <any> 'MAGENTO_PAYMENT_LINK',
+    MagentoAxInvoice = <any> 'MAGENTO_AX_INVOICE',
     PayNowInPerson = <any> 'PAY_NOW_IN_PERSON',
     PayNowMoto = <any> 'PAY_NOW_MOTO',
     PayNowPaymentLink = <any> 'PAY_NOW_PAYMENT_LINK'

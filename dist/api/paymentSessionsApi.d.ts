@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { PaymentSession } from '../model/paymentSession';
 import { PaymentSessionCreateInput } from '../model/paymentSessionCreateInput';

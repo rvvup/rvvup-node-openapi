@@ -13,8 +13,10 @@
 import { RequestFile } from './models';
 import { Address } from './address';
 import { ApplicationSource } from './applicationSource';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutStatus } from './checkoutStatus';
 import { Customer } from './customer';
+import { Item } from './item';
 import { Money } from './money';
 
 /**
@@ -40,6 +42,7 @@ export class Checkout {
     * The unique ID of the checkout.
     */
     'id': string;
+    'items': Array<Item>;
     /**
     * The ID of the merchant that owns this checkout.
     */
@@ -48,8 +51,13 @@ export class Checkout {
     * Key value pairs to store additional information about the checkout.
     */
     'metadata': { [key: string]: string; };
+    'mode': CheckoutMode;
     /**
-    * The ID of the payment link that was used to create this checkout.
+    * Id related to this checkout mode. The associated AccountStatement\'s id for the ACCOUNT_STATEMENT mode.The associated PaymentLink\'s id for the PAYMENT_LINK mode.The checkout\'s id for the CHECKOUT and VIRTUAL_TERMINAL mode.
+    */
+    'modeId': string;
+    /**
+    * The ID of the payment link that was used to create this checkout.This field is deprecated and will be removed in a future version.Use the modeId field instead.
     */
     'paymentLinkId'?: string;
     /**
@@ -114,6 +122,11 @@ export class Checkout {
             "type": "string"
         },
         {
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<Item>"
+        },
+        {
             "name": "merchantId",
             "baseName": "merchantId",
             "type": "string"
@@ -122,6 +135,16 @@ export class Checkout {
             "name": "metadata",
             "baseName": "metadata",
             "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
+        },
+        {
+            "name": "modeId",
+            "baseName": "modeId",
+            "type": "string"
         },
         {
             "name": "paymentLinkId",

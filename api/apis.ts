@@ -1,3 +1,5 @@
+export * from './accountStatementsApi';
+import { AccountStatementsApi } from './accountStatementsApi';
 export * from './checkoutTemplatesApi';
 import { CheckoutTemplatesApi } from './checkoutTemplatesApi';
 export * from './checkoutsApi';
@@ -23,4 +25,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [CheckoutTemplatesApi, CheckoutsApi, PaymentLinksApi, PaymentSessionsApi, StatementExportsApi, ThemesApi, WebhooksApi];
+export const APIS = [AccountStatementsApi, CheckoutTemplatesApi, CheckoutsApi, PaymentLinksApi, PaymentSessionsApi, StatementExportsApi, ThemesApi, WebhooksApi];

@@ -23,10 +23,16 @@ class CheckoutCreateInput {
     */
     'checkoutTemplateId';
     'customer';
+    'items';
     /**
     * Key value pairs to store additional information about the checkout.
     */
     'metadata';
+    'mode';
+    /**
+    * ID related to this checkout mode. Required for the ACCOUNT_STATEMENT mode and should be set to the AccountStatement\'s ID.Automatically set for all other modes.
+    */
+    'modeId';
     /**
     * Your reference to identify the checkout and the subsequently created payment sessions.
     */
@@ -59,9 +65,24 @@ class CheckoutCreateInput {
             "type": "CustomerInput"
         },
         {
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<ItemInput>"
+        },
+        {
             "name": "metadata",
             "baseName": "metadata",
             "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
+        },
+        {
+            "name": "modeId",
+            "baseName": "modeId",
+            "type": "string"
         },
         {
             "name": "reference",

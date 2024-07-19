@@ -16,6 +16,7 @@ exports.ThemeCreateInput = void 0;
 * Theme create input object
 */
 class ThemeCreateInput {
+    'backgroundImage';
     'colors';
     /**
     * Whether the theme is the default theme that is used when no theme is specified.
@@ -28,6 +29,11 @@ class ThemeCreateInput {
     'paymentMethodSelector';
     static discriminator = undefined;
     static attributeTypeMap = [
+        {
+            "name": "backgroundImage",
+            "baseName": "backgroundImage",
+            "type": "ThemeBackgroundImageCreateInput"
+        },
         {
             "name": "colors",
             "baseName": "colors",

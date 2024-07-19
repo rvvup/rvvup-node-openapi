@@ -13,7 +13,9 @@
 import { RequestFile } from './models';
 import { AddressInput } from './addressInput';
 import { ApplicationSource } from './applicationSource';
+import { CheckoutMode } from './checkoutMode';
 import { CustomerInput } from './customerInput';
+import { ItemInput } from './itemInput';
 import { MoneyInput } from './moneyInput';
 
 /**
@@ -27,10 +29,16 @@ export class CheckoutCreateInput {
     */
     'checkoutTemplateId'?: string;
     'customer'?: CustomerInput;
+    'items'?: Array<ItemInput>;
     /**
     * Key value pairs to store additional information about the checkout.
     */
     'metadata'?: { [key: string]: string; };
+    'mode'?: CheckoutMode;
+    /**
+    * ID related to this checkout mode. Required for the ACCOUNT_STATEMENT mode and should be set to the AccountStatement\'s ID.Automatically set for all other modes.
+    */
+    'modeId'?: string;
     /**
     * Your reference to identify the checkout and the subsequently created payment sessions.
     */
@@ -65,9 +73,24 @@ export class CheckoutCreateInput {
             "type": "CustomerInput"
         },
         {
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<ItemInput>"
+        },
+        {
             "name": "metadata",
             "baseName": "metadata",
             "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
+        },
+        {
+            "name": "modeId",
+            "baseName": "modeId",
+            "type": "string"
         },
         {
             "name": "reference",

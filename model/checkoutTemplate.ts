@@ -14,6 +14,7 @@ import { RequestFile } from './models';
 import { ApplicationSource } from './applicationSource';
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFields } from './checkoutCustomerFields';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettings } from './checkoutPaymentMethodSettings';
 import { PaymentMethod } from './paymentMethod';
 
@@ -36,6 +37,7 @@ export class CheckoutTemplate {
     * The ID of the merchant that owns this checkout template.
     */
     'merchantId': string;
+    'mode': CheckoutMode;
     /**
     * The name of the checkout template.
     */
@@ -87,6 +89,11 @@ export class CheckoutTemplate {
             "name": "merchantId",
             "baseName": "merchantId",
             "type": "string"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
         },
         {
             "name": "name",

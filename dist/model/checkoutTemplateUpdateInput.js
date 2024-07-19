@@ -50,7 +50,7 @@ class CheckoutTemplateUpdateInput {
         {
             "name": "enabledPaymentMethods",
             "baseName": "enabledPaymentMethods",
-            "type": "Array<PaymentMethod>"
+            "type": "CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum"
         },
         {
             "name": "name",
@@ -78,4 +78,9 @@ class CheckoutTemplateUpdateInput {
     }
 }
 exports.CheckoutTemplateUpdateInput = CheckoutTemplateUpdateInput;
+(function (CheckoutTemplateUpdateInput) {
+    let EnabledPaymentMethodsEnum;
+    (function (EnabledPaymentMethodsEnum) {
+    })(EnabledPaymentMethodsEnum = CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum || (CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum = {}));
+})(CheckoutTemplateUpdateInput || (exports.CheckoutTemplateUpdateInput = CheckoutTemplateUpdateInput = {}));
 //# sourceMappingURL=checkoutTemplateUpdateInput.js.map

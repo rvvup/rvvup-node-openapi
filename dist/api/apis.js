@@ -15,6 +15,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.APIS = exports.HttpError = void 0;
+__exportStar(require("./accountStatementsApi"), exports);
+const accountStatementsApi_1 = require("./accountStatementsApi");
 __exportStar(require("./checkoutTemplatesApi"), exports);
 const checkoutTemplatesApi_1 = require("./checkoutTemplatesApi");
 __exportStar(require("./checkoutsApi"), exports);
@@ -42,5 +44,5 @@ class HttpError extends Error {
     }
 }
 exports.HttpError = HttpError;
-exports.APIS = [checkoutTemplatesApi_1.CheckoutTemplatesApi, checkoutsApi_1.CheckoutsApi, paymentLinksApi_1.PaymentLinksApi, paymentSessionsApi_1.PaymentSessionsApi, statementExportsApi_1.StatementExportsApi, themesApi_1.ThemesApi, webhooksApi_1.WebhooksApi];
+exports.APIS = [accountStatementsApi_1.AccountStatementsApi, checkoutTemplatesApi_1.CheckoutTemplatesApi, checkoutsApi_1.CheckoutsApi, paymentLinksApi_1.PaymentLinksApi, paymentSessionsApi_1.PaymentSessionsApi, statementExportsApi_1.StatementExportsApi, themesApi_1.ThemesApi, webhooksApi_1.WebhooksApi];
 //# sourceMappingURL=apis.js.map

@@ -18,6 +18,7 @@ class PaymentSession {
     * The ID of the checkout that the payment session was created from.
     */
     'checkoutId';
+    'checkoutMode';
     /**
     * The datetime when the payment session was created.
     */
@@ -76,6 +77,11 @@ class PaymentSession {
             "name": "checkoutId",
             "baseName": "checkoutId",
             "type": "string"
+        },
+        {
+            "name": "checkoutMode",
+            "baseName": "checkoutMode",
+            "type": "CheckoutMode"
         },
         {
             "name": "createdAt",

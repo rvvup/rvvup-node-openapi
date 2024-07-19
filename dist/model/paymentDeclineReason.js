@@ -26,5 +26,6 @@ var PaymentDeclineReason;
     PaymentDeclineReason[PaymentDeclineReason["Cvv2Failure"] = 'CVV2_FAILURE'] = "Cvv2Failure";
     PaymentDeclineReason[PaymentDeclineReason["FundingInstrumentExpired"] = 'FUNDING_INSTRUMENT_EXPIRED'] = "FundingInstrumentExpired";
     PaymentDeclineReason[PaymentDeclineReason["FundingInstrumentInvalid"] = 'FUNDING_INSTRUMENT_INVALID'] = "FundingInstrumentInvalid";
+    PaymentDeclineReason[PaymentDeclineReason["InvalidAuthorization"] = 'INVALID_AUTHORIZATION'] = "InvalidAuthorization";
 })(PaymentDeclineReason || (exports.PaymentDeclineReason = PaymentDeclineReason = {}));
 //# sourceMappingURL=paymentDeclineReason.js.map

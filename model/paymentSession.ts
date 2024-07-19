@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { Address } from './address';
+import { CheckoutMode } from './checkoutMode';
 import { Customer } from './customer';
 import { Item } from './item';
 import { Money } from './money';
@@ -24,6 +25,7 @@ export class PaymentSession {
     * The ID of the checkout that the payment session was created from.
     */
     'checkoutId'?: string;
+    'checkoutMode': CheckoutMode;
     /**
     * The datetime when the payment session was created.
     */
@@ -84,6 +86,11 @@ export class PaymentSession {
             "name": "checkoutId",
             "baseName": "checkoutId",
             "type": "string"
+        },
+        {
+            "name": "checkoutMode",
+            "baseName": "checkoutMode",
+            "type": "CheckoutMode"
         },
         {
             "name": "createdAt",

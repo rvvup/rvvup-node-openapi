@@ -24,6 +24,7 @@ var ApplicationSource;
     ApplicationSource[ApplicationSource["DashboardPaymentLink"] = 'DASHBOARD_PAYMENT_LINK'] = "DashboardPaymentLink";
     ApplicationSource[ApplicationSource["MagentoMoto"] = 'MAGENTO_MOTO'] = "MagentoMoto";
     ApplicationSource[ApplicationSource["MagentoPaymentLink"] = 'MAGENTO_PAYMENT_LINK'] = "MagentoPaymentLink";
+    ApplicationSource[ApplicationSource["MagentoAxInvoice"] = 'MAGENTO_AX_INVOICE'] = "MagentoAxInvoice";
     ApplicationSource[ApplicationSource["PayNowInPerson"] = 'PAY_NOW_IN_PERSON'] = "PayNowInPerson";
     ApplicationSource[ApplicationSource["PayNowMoto"] = 'PAY_NOW_MOTO'] = "PayNowMoto";
     ApplicationSource[ApplicationSource["PayNowPaymentLink"] = 'PAY_NOW_PAYMENT_LINK'] = "PayNowPaymentLink";

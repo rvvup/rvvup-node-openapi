@@ -14,6 +14,7 @@ import { RequestFile } from './models';
 import { ApplicationSource } from './applicationSource';
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsInput } from './checkoutCustomerFieldsInput';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettingsInput } from './checkoutPaymentMethodSettingsInput';
 import { PaymentMethod } from './paymentMethod';
 
@@ -26,7 +27,8 @@ export class CheckoutTemplateCreateInput {
     /**
     * Ordered list of payment methods that are enabled for the checkout.
     */
-    'enabledPaymentMethods'?: Array<PaymentMethod>;
+    'enabledPaymentMethods'?: CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum;
+    'mode'?: CheckoutMode;
     /**
     * The name of the checkout template.
     */
@@ -58,7 +60,12 @@ export class CheckoutTemplateCreateInput {
         {
             "name": "enabledPaymentMethods",
             "baseName": "enabledPaymentMethods",
-            "type": "Array<PaymentMethod>"
+            "type": "CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
         },
         {
             "name": "name",
@@ -92,4 +99,6 @@ export class CheckoutTemplateCreateInput {
 }
 
 export namespace CheckoutTemplateCreateInput {
+    export enum EnabledPaymentMethodsEnum {
+    }
 }

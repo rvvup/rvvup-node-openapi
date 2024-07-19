@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { StatementExportRequest } from '../model/statementExportRequest';
 import { Authentication, Interceptor } from '../model/models';

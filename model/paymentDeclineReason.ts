@@ -24,5 +24,6 @@ export enum PaymentDeclineReason {
     AccountClosed = <any> 'ACCOUNT_CLOSED',
     Cvv2Failure = <any> 'CVV2_FAILURE',
     FundingInstrumentExpired = <any> 'FUNDING_INSTRUMENT_EXPIRED',
-    FundingInstrumentInvalid = <any> 'FUNDING_INSTRUMENT_INVALID'
+    FundingInstrumentInvalid = <any> 'FUNDING_INSTRUMENT_INVALID',
+    InvalidAuthorization = <any> 'INVALID_AUTHORIZATION'
 }

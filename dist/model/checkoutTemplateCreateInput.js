@@ -22,6 +22,7 @@ class CheckoutTemplateCreateInput {
     * Ordered list of payment methods that are enabled for the checkout.
     */
     'enabledPaymentMethods';
+    'mode';
     /**
     * The name of the checkout template.
     */
@@ -51,7 +52,12 @@ class CheckoutTemplateCreateInput {
         {
             "name": "enabledPaymentMethods",
             "baseName": "enabledPaymentMethods",
-            "type": "Array<PaymentMethod>"
+            "type": "CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
         },
         {
             "name": "name",
@@ -84,4 +90,9 @@ class CheckoutTemplateCreateInput {
     }
 }
 exports.CheckoutTemplateCreateInput = CheckoutTemplateCreateInput;
+(function (CheckoutTemplateCreateInput) {
+    let EnabledPaymentMethodsEnum;
+    (function (EnabledPaymentMethodsEnum) {
+    })(EnabledPaymentMethodsEnum = CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum || (CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum = {}));
+})(CheckoutTemplateCreateInput || (exports.CheckoutTemplateCreateInput = CheckoutTemplateCreateInput = {}));
 //# sourceMappingURL=checkoutTemplateCreateInput.js.map

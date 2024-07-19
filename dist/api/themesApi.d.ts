@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { Theme } from '../model/theme';
 import { ThemeCreateInput } from '../model/themeCreateInput';

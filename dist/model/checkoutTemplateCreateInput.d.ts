@@ -12,8 +12,8 @@
 import { ApplicationSource } from './applicationSource';
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsInput } from './checkoutCustomerFieldsInput';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettingsInput } from './checkoutPaymentMethodSettingsInput';
-import { PaymentMethod } from './paymentMethod';
 /**
 * The input for creating a checkout template.
 */
@@ -23,7 +23,8 @@ export declare class CheckoutTemplateCreateInput {
     /**
     * Ordered list of payment methods that are enabled for the checkout.
     */
-    'enabledPaymentMethods'?: Array<PaymentMethod>;
+    'enabledPaymentMethods'?: CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum;
+    'mode'?: CheckoutMode;
     /**
     * The name of the checkout template.
     */
@@ -51,4 +52,6 @@ export declare class CheckoutTemplateCreateInput {
     }[];
 }
 export declare namespace CheckoutTemplateCreateInput {
+    enum EnabledPaymentMethodsEnum {
+    }
 }

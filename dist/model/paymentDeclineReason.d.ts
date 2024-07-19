@@ -21,5 +21,6 @@ export declare enum PaymentDeclineReason {
     AccountClosed,
     Cvv2Failure,
     FundingInstrumentExpired,
-    FundingInstrumentInvalid
+    FundingInstrumentInvalid,
+    InvalidAuthorization
 }

@@ -25,7 +25,7 @@ export class CheckoutTemplateUpdateInput {
     /**
     * Ordered list of payment methods that are enabled for the checkout.
     */
-    'enabledPaymentMethods'?: Array<PaymentMethod>;
+    'enabledPaymentMethods'?: CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum;
     /**
     * The name of the checkout template.
     */
@@ -56,7 +56,7 @@ export class CheckoutTemplateUpdateInput {
         {
             "name": "enabledPaymentMethods",
             "baseName": "enabledPaymentMethods",
-            "type": "Array<PaymentMethod>"
+            "type": "CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum"
         },
         {
             "name": "name",
@@ -85,4 +85,6 @@ export class CheckoutTemplateUpdateInput {
 }
 
 export namespace CheckoutTemplateUpdateInput {
+    export enum EnabledPaymentMethodsEnum {
+    }
 }

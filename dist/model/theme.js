@@ -16,6 +16,7 @@ exports.Theme = void 0;
 * Theme object
 */
 class Theme {
+    'backgroundImage';
     'colors';
     /**
     * The datetime when the theme was created.
@@ -44,6 +45,11 @@ class Theme {
     'updatedAt';
     static discriminator = undefined;
     static attributeTypeMap = [
+        {
+            "name": "backgroundImage",
+            "baseName": "backgroundImage",
+            "type": "ThemeBackgroundImage"
+        },
         {
             "name": "colors",
             "baseName": "colors",

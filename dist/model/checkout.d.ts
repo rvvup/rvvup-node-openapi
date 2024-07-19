@@ -11,8 +11,10 @@
  */
 import { Address } from './address';
 import { ApplicationSource } from './applicationSource';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutStatus } from './checkoutStatus';
 import { Customer } from './customer';
+import { Item } from './item';
 import { Money } from './money';
 /**
 * Checkout object
@@ -37,6 +39,7 @@ export declare class Checkout {
     * The unique ID of the checkout.
     */
     'id': string;
+    'items': Array<Item>;
     /**
     * The ID of the merchant that owns this checkout.
     */
@@ -47,8 +50,13 @@ export declare class Checkout {
     'metadata': {
         [key: string]: string;
     };
+    'mode': CheckoutMode;
     /**
-    * The ID of the payment link that was used to create this checkout.
+    * Id related to this checkout mode. The associated AccountStatement\'s id for the ACCOUNT_STATEMENT mode.The associated PaymentLink\'s id for the PAYMENT_LINK mode.The checkout\'s id for the CHECKOUT and VIRTUAL_TERMINAL mode.
+    */
+    'modeId': string;
+    /**
+    * The ID of the payment link that was used to create this checkout.This field is deprecated and will be removed in a future version.Use the modeId field instead.
     */
     'paymentLinkId'?: string;
     /**

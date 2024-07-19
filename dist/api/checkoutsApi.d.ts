@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-/// <reference types="node" />
 import http from 'http';
 import { Checkout } from '../model/checkout';
 import { CheckoutCreateInput } from '../model/checkoutCreateInput';

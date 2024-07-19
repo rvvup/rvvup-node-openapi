@@ -31,6 +31,7 @@ class CheckoutTemplate {
     * The ID of the merchant that owns this checkout template.
     */
     'merchantId';
+    'mode';
     /**
     * The name of the checkout template.
     */
@@ -80,6 +81,11 @@ class CheckoutTemplate {
             "name": "merchantId",
             "baseName": "merchantId",
             "type": "string"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
         },
         {
             "name": "name",

@@ -12,7 +12,6 @@
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsUpdateInput } from './checkoutCustomerFieldsUpdateInput';
 import { CheckoutPaymentMethodSettingsUpdateInput } from './checkoutPaymentMethodSettingsUpdateInput';
-import { PaymentMethod } from './paymentMethod';
 /**
 * The input for updating a checkout template.
 */
@@ -22,7 +21,7 @@ export declare class CheckoutTemplateUpdateInput {
     /**
     * Ordered list of payment methods that are enabled for the checkout.
     */
-    'enabledPaymentMethods'?: Array<PaymentMethod>;
+    'enabledPaymentMethods'?: CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum;
     /**
     * The name of the checkout template.
     */
@@ -49,4 +48,6 @@ export declare class CheckoutTemplateUpdateInput {
     }[];
 }
 export declare namespace CheckoutTemplateUpdateInput {
+    enum EnabledPaymentMethodsEnum {
+    }
 }

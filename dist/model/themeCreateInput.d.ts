@@ -9,12 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ThemeBackgroundImageCreateInput } from './themeBackgroundImageCreateInput';
 import { ThemeColorsCreateInput } from './themeColorsCreateInput';
 import { ThemePaymentMethodSelectorCreateInput } from './themePaymentMethodSelectorCreateInput';
 /**
 * Theme create input object
 */
 export declare class ThemeCreateInput {
+    'backgroundImage'?: ThemeBackgroundImageCreateInput;
     'colors': ThemeColorsCreateInput;
     /**
     * Whether the theme is the default theme that is used when no theme is specified.

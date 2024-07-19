@@ -14,6 +14,10 @@
 */
 export declare class ThemeColors {
     /**
+    * Background color.
+    */
+    'background'?: string;
+    /**
     * Primary color.
     */
     'primary': string;

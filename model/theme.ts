@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { ThemeBackgroundImage } from './themeBackgroundImage';
 import { ThemeColors } from './themeColors';
 import { ThemePaymentMethodSelector } from './themePaymentMethodSelector';
 
@@ -18,6 +19,7 @@ import { ThemePaymentMethodSelector } from './themePaymentMethodSelector';
 * Theme object
 */
 export class Theme {
+    'backgroundImage'?: ThemeBackgroundImage;
     'colors': ThemeColors;
     /**
     * The datetime when the theme was created.
@@ -48,6 +50,11 @@ export class Theme {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "backgroundImage",
+            "baseName": "backgroundImage",
+            "type": "ThemeBackgroundImage"
+        },
         {
             "name": "colors",
             "baseName": "colors",

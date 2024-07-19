@@ -12,6 +12,7 @@
 import { ApplicationSource } from './applicationSource';
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFields } from './checkoutCustomerFields';
+import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettings } from './checkoutPaymentMethodSettings';
 import { PaymentMethod } from './paymentMethod';
 export declare class CheckoutTemplate {
@@ -33,6 +34,7 @@ export declare class CheckoutTemplate {
     * The ID of the merchant that owns this checkout template.
     */
     'merchantId': string;
+    'mode': CheckoutMode;
     /**
     * The name of the checkout template.
     */

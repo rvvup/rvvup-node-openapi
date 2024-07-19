@@ -1,6 +1,6 @@
 {
   "name": "@rvvup/node-openapi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NodeJS client for @rvvup/node-openapi",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
   "scripts": {
     "clean": "rm -Rf node_modules/ dist/",
     "build": "tsc",
-    "test": "npm run build && node dist/api.js"
+    "test": "npm run build && node dist/api.js",
+    "generate": "npx @openapitools/openapi-generator-cli generate -g typescript-node -i https://docs.rvvup.com/openapi.yaml --additional-properties=npmName=@rvvup/node-openapi,supportsES6=true,snapshot=true"
   },
   "author": "OpenAPI-Generator Contributors",
   "dependencies": {

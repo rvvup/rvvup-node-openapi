@@ -17,6 +17,10 @@ exports.ThemeColorsCreateInput = void 0;
 */
 class ThemeColorsCreateInput {
     /**
+    * Background color.
+    */
+    'background';
+    /**
     * Primary color.
     */
     'primary';
@@ -38,6 +42,11 @@ class ThemeColorsCreateInput {
     'primaryLight';
     static discriminator = undefined;
     static attributeTypeMap = [
+        {
+            "name": "background",
+            "baseName": "background",
+            "type": "string"
+        },
         {
             "name": "primary",
             "baseName": "primary",

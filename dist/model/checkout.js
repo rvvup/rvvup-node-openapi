@@ -35,6 +35,7 @@ class Checkout {
     * The unique ID of the checkout.
     */
     'id';
+    'items';
     /**
     * The ID of the merchant that owns this checkout.
     */
@@ -43,8 +44,13 @@ class Checkout {
     * Key value pairs to store additional information about the checkout.
     */
     'metadata';
+    'mode';
     /**
-    * The ID of the payment link that was used to create this checkout.
+    * Id related to this checkout mode. The associated AccountStatement\'s id for the ACCOUNT_STATEMENT mode.The associated PaymentLink\'s id for the PAYMENT_LINK mode.The checkout\'s id for the CHECKOUT and VIRTUAL_TERMINAL mode.
+    */
+    'modeId';
+    /**
+    * The ID of the payment link that was used to create this checkout.This field is deprecated and will be removed in a future version.Use the modeId field instead.
     */
     'paymentLinkId';
     /**
@@ -107,6 +113,11 @@ class Checkout {
             "type": "string"
         },
         {
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<Item>"
+        },
+        {
             "name": "merchantId",
             "baseName": "merchantId",
             "type": "string"
@@ -115,6 +126,16 @@ class Checkout {
             "name": "metadata",
             "baseName": "metadata",
             "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "mode",
+            "baseName": "mode",
+            "type": "CheckoutMode"
+        },
+        {
+            "name": "modeId",
+            "baseName": "modeId",
+            "type": "string"
         },
         {
             "name": "paymentLinkId",

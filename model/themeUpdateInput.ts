@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { ThemeBackgroundImageUpdateInput } from './themeBackgroundImageUpdateInput';
 import { ThemeColorsUpdateInput } from './themeColorsUpdateInput';
 import { ThemePaymentMethodSelectorUpdateInput } from './themePaymentMethodSelectorUpdateInput';
 
@@ -18,6 +19,7 @@ import { ThemePaymentMethodSelectorUpdateInput } from './themePaymentMethodSelec
 * Theme update input
 */
 export class ThemeUpdateInput {
+    'backgroundImage'?: ThemeBackgroundImageUpdateInput;
     'colors'?: ThemeColorsUpdateInput;
     /**
     * Whether the theme is the default theme that is used when no theme is specified.
@@ -32,6 +34,11 @@ export class ThemeUpdateInput {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "backgroundImage",
+            "baseName": "backgroundImage",
+            "type": "ThemeBackgroundImageUpdateInput"
+        },
         {
             "name": "colors",
             "baseName": "colors",
