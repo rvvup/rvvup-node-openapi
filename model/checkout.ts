@@ -26,6 +26,10 @@ export class Checkout {
     'amount'?: Money;
     'billingAddress'?: Address;
     /**
+    * The URL to redirect the customer to if the checkout does not complete successfully.
+    */
+    'cancelUrl'?: string;
+    /**
     * The ID of the checkout template to use for this checkout.
     */
     'checkoutTemplateId': string;
@@ -65,6 +69,10 @@ export class Checkout {
     */
     'paymentSessionIds': Array<string>;
     /**
+    * The URL to redirect the customer to if the checkout falls into a pending payment flow.
+    */
+    'pendingUrl'?: string;
+    /**
     * Your reference to identify the checkout and the subsequently created payment sessions.
     */
     'reference'?: string;
@@ -95,6 +103,11 @@ export class Checkout {
             "name": "billingAddress",
             "baseName": "billingAddress",
             "type": "Address"
+        },
+        {
+            "name": "cancelUrl",
+            "baseName": "cancelUrl",
+            "type": "string"
         },
         {
             "name": "checkoutTemplateId",
@@ -155,6 +168,11 @@ export class Checkout {
             "name": "paymentSessionIds",
             "baseName": "paymentSessionIds",
             "type": "Array<string>"
+        },
+        {
+            "name": "pendingUrl",
+            "baseName": "pendingUrl",
+            "type": "string"
         },
         {
             "name": "reference",

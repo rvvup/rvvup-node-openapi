@@ -9,13 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Image } from './image';
+import { ThemeDesktopBackgroundImage } from './themeDesktopBackgroundImage';
+import { ThemeMobileBackgroundImage } from './themeMobileBackgroundImage';
 /**
 * The background images for the theme.
 */
 export declare class ThemeBackgroundImage {
-    'desktop'?: Image;
-    'mobile'?: Image;
+    'desktop'?: ThemeDesktopBackgroundImage;
+    'mobile'?: ThemeMobileBackgroundImage;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

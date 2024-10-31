@@ -13,7 +13,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AccountStatementStatus = void 0;
 /**
-* The status for this account statement.
+* The status of the account statement. Derived from the invoice data. If all invoices are paid, the account statement is considered paid.
 */
 var AccountStatementStatus;
 (function (AccountStatementStatus) {

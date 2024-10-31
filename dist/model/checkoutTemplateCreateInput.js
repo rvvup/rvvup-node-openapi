@@ -36,6 +36,7 @@ class CheckoutTemplateCreateInput {
     */
     'notifyMerchant' = false;
     'paymentMethodSettings';
+    'referenceType';
     'source';
     static discriminator = undefined;
     static attributeTypeMap = [
@@ -78,6 +79,11 @@ class CheckoutTemplateCreateInput {
             "name": "paymentMethodSettings",
             "baseName": "paymentMethodSettings",
             "type": "CheckoutPaymentMethodSettingsInput"
+        },
+        {
+            "name": "referenceType",
+            "baseName": "referenceType",
+            "type": "CheckoutReferenceType"
         },
         {
             "name": "source",

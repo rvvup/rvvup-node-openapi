@@ -14,6 +14,7 @@ import { RequestFile } from './models';
 import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsUpdateInput } from './checkoutCustomerFieldsUpdateInput';
 import { CheckoutPaymentMethodSettingsUpdateInput } from './checkoutPaymentMethodSettingsUpdateInput';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 import { PaymentMethod } from './paymentMethod';
 
 /**
@@ -39,6 +40,7 @@ export class CheckoutTemplateUpdateInput {
     */
     'notifyMerchant'?: boolean = false;
     'paymentMethodSettings'?: CheckoutPaymentMethodSettingsUpdateInput;
+    'referenceType'?: CheckoutReferenceType;
 
     static discriminator: string | undefined = undefined;
 
@@ -77,6 +79,11 @@ export class CheckoutTemplateUpdateInput {
             "name": "paymentMethodSettings",
             "baseName": "paymentMethodSettings",
             "type": "CheckoutPaymentMethodSettingsUpdateInput"
+        },
+        {
+            "name": "referenceType",
+            "baseName": "referenceType",
+            "type": "CheckoutReferenceType"
         }    ];
 
     static getAttributeTypeMap() {

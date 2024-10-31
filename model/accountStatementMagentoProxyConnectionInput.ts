@@ -18,9 +18,18 @@ import { AccountStatementConnectionType } from './accountStatementConnectionType
 * Data for the magento proxy connection.
 */
 export class AccountStatementMagentoProxyConnectionInput extends AccountStatementConnectionInput {
+    /**
+    * The magento proxy account ID.
+    */
     'accountId': string;
+    /**
+    * The magento proxy company ID.
+    */
     'companyId': string;
-    'statementId': string;
+    /**
+    * The magento proxy invoice ID.
+    */
+    'invoiceId': string;
 
     static discriminator: string | undefined = undefined;
 
@@ -36,8 +45,8 @@ export class AccountStatementMagentoProxyConnectionInput extends AccountStatemen
             "type": "string"
         },
         {
-            "name": "statementId",
-            "baseName": "statementId",
+            "name": "invoiceId",
+            "baseName": "invoiceId",
             "type": "string"
         }    ];
 

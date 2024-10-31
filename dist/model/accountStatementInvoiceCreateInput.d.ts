@@ -16,8 +16,29 @@ import { MoneyInput } from './moneyInput';
 export declare class AccountStatementInvoiceCreateInput {
     'amountPaid': MoneyInput;
     'amountRemaining': MoneyInput;
-    'invoiceDate'?: Date;
+    /**
+    * The due date of the invoice.
+    */
+    'dueDate': Date;
+    /**
+    * The created date of the invoice.
+    */
+    'invoiceDate': Date;
+    /**
+    * Key value pairs to store additional information about the invoice.
+    */
+    'metadata'?: {
+        [key: string]: string;
+    };
+    /**
+    * The date the invoice was fully paid.
+    */
+    'paidDate'?: Date;
+    /**
+    * The reference of the invoice.
+    */
     'reference': string;
+    'taxAmount': MoneyInput;
     'total': MoneyInput;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

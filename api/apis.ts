@@ -4,10 +4,20 @@ export * from './checkoutTemplatesApi';
 import { CheckoutTemplatesApi } from './checkoutTemplatesApi';
 export * from './checkoutsApi';
 import { CheckoutsApi } from './checkoutsApi';
+export * from './connectionsApi';
+import { ConnectionsApi } from './connectionsApi';
+export * from './logsApi';
+import { LogsApi } from './logsApi';
+export * from './notificationsApi';
+import { NotificationsApi } from './notificationsApi';
 export * from './paymentLinksApi';
 import { PaymentLinksApi } from './paymentLinksApi';
+export * from './paymentMethodsApi';
+import { PaymentMethodsApi } from './paymentMethodsApi';
 export * from './paymentSessionsApi';
 import { PaymentSessionsApi } from './paymentSessionsApi';
+export * from './refundsApi';
+import { RefundsApi } from './refundsApi';
 export * from './statementExportsApi';
 import { StatementExportsApi } from './statementExportsApi';
 export * from './themesApi';
@@ -25,4 +35,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountStatementsApi, CheckoutTemplatesApi, CheckoutsApi, PaymentLinksApi, PaymentSessionsApi, StatementExportsApi, ThemesApi, WebhooksApi];
+export const APIS = [AccountStatementsApi, CheckoutTemplatesApi, CheckoutsApi, ConnectionsApi, LogsApi, NotificationsApi, PaymentLinksApi, PaymentMethodsApi, PaymentSessionsApi, RefundsApi, StatementExportsApi, ThemesApi, WebhooksApi];

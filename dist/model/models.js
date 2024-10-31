@@ -20,12 +20,17 @@ __exportStar(require("./accountStatementConnection"), exports);
 __exportStar(require("./accountStatementConnectionInput"), exports);
 __exportStar(require("./accountStatementConnectionType"), exports);
 __exportStar(require("./accountStatementCreateInput"), exports);
+__exportStar(require("./accountStatementCreditNote"), exports);
+__exportStar(require("./accountStatementCreditNoteCreateInput"), exports);
 __exportStar(require("./accountStatementInvoice"), exports);
 __exportStar(require("./accountStatementInvoiceCreateInput"), exports);
 __exportStar(require("./accountStatementInvoiceStatus"), exports);
 __exportStar(require("./accountStatementMagentoProxyConnection"), exports);
 __exportStar(require("./accountStatementMagentoProxyConnectionInput"), exports);
 __exportStar(require("./accountStatementStatus"), exports);
+__exportStar(require("./actionType"), exports);
+__exportStar(require("./actionTypeInput"), exports);
+__exportStar(require("./actorType"), exports);
 __exportStar(require("./address"), exports);
 __exportStar(require("./addressInput"), exports);
 __exportStar(require("./applicationSource"), exports);
@@ -42,6 +47,9 @@ __exportStar(require("./checkoutCustomerFieldType"), exports);
 __exportStar(require("./checkoutCustomerFields"), exports);
 __exportStar(require("./checkoutCustomerFieldsInput"), exports);
 __exportStar(require("./checkoutCustomerFieldsUpdateInput"), exports);
+__exportStar(require("./checkoutGooglePaySettings"), exports);
+__exportStar(require("./checkoutGooglePaySettingsInput"), exports);
+__exportStar(require("./checkoutGooglePaySettingsUpdateInput"), exports);
 __exportStar(require("./checkoutMode"), exports);
 __exportStar(require("./checkoutPage"), exports);
 __exportStar(require("./checkoutPayByBankSettings"), exports);
@@ -50,22 +58,45 @@ __exportStar(require("./checkoutPayByBankSettingsUpdateInput"), exports);
 __exportStar(require("./checkoutPaymentMethodSettings"), exports);
 __exportStar(require("./checkoutPaymentMethodSettingsInput"), exports);
 __exportStar(require("./checkoutPaymentMethodSettingsUpdateInput"), exports);
+__exportStar(require("./checkoutReferenceType"), exports);
 __exportStar(require("./checkoutStatus"), exports);
 __exportStar(require("./checkoutTemplate"), exports);
 __exportStar(require("./checkoutTemplateCreateInput"), exports);
 __exportStar(require("./checkoutTemplatePage"), exports);
 __exportStar(require("./checkoutTemplateUpdateInput"), exports);
+__exportStar(require("./connection"), exports);
+__exportStar(require("./connectionCreateInput"), exports);
+__exportStar(require("./connectionData"), exports);
+__exportStar(require("./connectionDataInput"), exports);
+__exportStar(require("./connectionOauthSignatureMethod"), exports);
+__exportStar(require("./connectionPage"), exports);
+__exportStar(require("./connectionStatus"), exports);
+__exportStar(require("./connectionType"), exports);
 __exportStar(require("./customer"), exports);
 __exportStar(require("./customerInput"), exports);
-__exportStar(require("./image"), exports);
-__exportStar(require("./imageUrl"), exports);
+__exportStar(require("./googlePayConnectionData"), exports);
+__exportStar(require("./googlePayConnectionDataInput"), exports);
 __exportStar(require("./item"), exports);
 __exportStar(require("./itemInput"), exports);
 __exportStar(require("./itemRestriction"), exports);
+__exportStar(require("./logCreateInput"), exports);
+__exportStar(require("./logRecord"), exports);
+__exportStar(require("./magentoProxyConnectionData"), exports);
+__exportStar(require("./magentoProxyConnectionDataInput"), exports);
 __exportStar(require("./money"), exports);
 __exportStar(require("./moneyInput"), exports);
+__exportStar(require("./notificationSubscription"), exports);
+__exportStar(require("./notificationSubscriptionConfiguration"), exports);
+__exportStar(require("./notificationSubscriptionConfigurationInput"), exports);
+__exportStar(require("./notificationSubscriptionCreateInput"), exports);
+__exportStar(require("./notificationSubscriptionPage"), exports);
+__exportStar(require("./notificationSubscriptionRecipient"), exports);
+__exportStar(require("./notificationSubscriptionRecipientInput"), exports);
+__exportStar(require("./notificationType"), exports);
 __exportStar(require("./pageCheckout"), exports);
 __exportStar(require("./pageCheckoutTemplate"), exports);
+__exportStar(require("./pageConnection"), exports);
+__exportStar(require("./pageNotificationSubscription"), exports);
 __exportStar(require("./pagePaymentLink"), exports);
 __exportStar(require("./pagePaymentMethodDetail"), exports);
 __exportStar(require("./pageTheme"), exports);
@@ -97,6 +128,11 @@ __exportStar(require("./paymentSettlementStatus"), exports);
 __exportStar(require("./paymentStatus"), exports);
 __exportStar(require("./paymentSummary"), exports);
 __exportStar(require("./paymentVoidReason"), exports);
+__exportStar(require("./refund"), exports);
+__exportStar(require("./refundCreateInput"), exports);
+__exportStar(require("./refundFailureReason"), exports);
+__exportStar(require("./refundStatus"), exports);
+__exportStar(require("./resourceType"), exports);
 __exportStar(require("./startEnd"), exports);
 __exportStar(require("./statementExportRequest"), exports);
 __exportStar(require("./theme"), exports);
@@ -107,8 +143,10 @@ __exportStar(require("./themeColors"), exports);
 __exportStar(require("./themeColorsCreateInput"), exports);
 __exportStar(require("./themeColorsUpdateInput"), exports);
 __exportStar(require("./themeCreateInput"), exports);
+__exportStar(require("./themeDesktopBackgroundImage"), exports);
 __exportStar(require("./themeImageCreateInput"), exports);
 __exportStar(require("./themeImageUpdateInput"), exports);
+__exportStar(require("./themeMobileBackgroundImage"), exports);
 __exportStar(require("./themePage"), exports);
 __exportStar(require("./themePaymentMethodSelector"), exports);
 __exportStar(require("./themePaymentMethodSelectorColors"), exports);
@@ -128,12 +166,17 @@ const accountStatementConnection_1 = require("./accountStatementConnection");
 const accountStatementConnectionInput_1 = require("./accountStatementConnectionInput");
 const accountStatementConnectionType_1 = require("./accountStatementConnectionType");
 const accountStatementCreateInput_1 = require("./accountStatementCreateInput");
+const accountStatementCreditNote_1 = require("./accountStatementCreditNote");
+const accountStatementCreditNoteCreateInput_1 = require("./accountStatementCreditNoteCreateInput");
 const accountStatementInvoice_1 = require("./accountStatementInvoice");
 const accountStatementInvoiceCreateInput_1 = require("./accountStatementInvoiceCreateInput");
 const accountStatementInvoiceStatus_1 = require("./accountStatementInvoiceStatus");
 const accountStatementMagentoProxyConnection_1 = require("./accountStatementMagentoProxyConnection");
 const accountStatementMagentoProxyConnectionInput_1 = require("./accountStatementMagentoProxyConnectionInput");
 const accountStatementStatus_1 = require("./accountStatementStatus");
+const actionType_1 = require("./actionType");
+const actionTypeInput_1 = require("./actionTypeInput");
+const actorType_1 = require("./actorType");
 const address_1 = require("./address");
 const addressInput_1 = require("./addressInput");
 const applicationSource_1 = require("./applicationSource");
@@ -150,6 +193,9 @@ const checkoutCustomerFieldType_1 = require("./checkoutCustomerFieldType");
 const checkoutCustomerFields_1 = require("./checkoutCustomerFields");
 const checkoutCustomerFieldsInput_1 = require("./checkoutCustomerFieldsInput");
 const checkoutCustomerFieldsUpdateInput_1 = require("./checkoutCustomerFieldsUpdateInput");
+const checkoutGooglePaySettings_1 = require("./checkoutGooglePaySettings");
+const checkoutGooglePaySettingsInput_1 = require("./checkoutGooglePaySettingsInput");
+const checkoutGooglePaySettingsUpdateInput_1 = require("./checkoutGooglePaySettingsUpdateInput");
 const checkoutMode_1 = require("./checkoutMode");
 const checkoutPage_1 = require("./checkoutPage");
 const checkoutPayByBankSettings_1 = require("./checkoutPayByBankSettings");
@@ -158,22 +204,45 @@ const checkoutPayByBankSettingsUpdateInput_1 = require("./checkoutPayByBankSetti
 const checkoutPaymentMethodSettings_1 = require("./checkoutPaymentMethodSettings");
 const checkoutPaymentMethodSettingsInput_1 = require("./checkoutPaymentMethodSettingsInput");
 const checkoutPaymentMethodSettingsUpdateInput_1 = require("./checkoutPaymentMethodSettingsUpdateInput");
+const checkoutReferenceType_1 = require("./checkoutReferenceType");
 const checkoutStatus_1 = require("./checkoutStatus");
 const checkoutTemplate_1 = require("./checkoutTemplate");
 const checkoutTemplateCreateInput_1 = require("./checkoutTemplateCreateInput");
 const checkoutTemplatePage_1 = require("./checkoutTemplatePage");
 const checkoutTemplateUpdateInput_1 = require("./checkoutTemplateUpdateInput");
+const connection_1 = require("./connection");
+const connectionCreateInput_1 = require("./connectionCreateInput");
+const connectionData_1 = require("./connectionData");
+const connectionDataInput_1 = require("./connectionDataInput");
+const connectionOauthSignatureMethod_1 = require("./connectionOauthSignatureMethod");
+const connectionPage_1 = require("./connectionPage");
+const connectionStatus_1 = require("./connectionStatus");
+const connectionType_1 = require("./connectionType");
 const customer_1 = require("./customer");
 const customerInput_1 = require("./customerInput");
-const image_1 = require("./image");
-const imageUrl_1 = require("./imageUrl");
+const googlePayConnectionData_1 = require("./googlePayConnectionData");
+const googlePayConnectionDataInput_1 = require("./googlePayConnectionDataInput");
 const item_1 = require("./item");
 const itemInput_1 = require("./itemInput");
 const itemRestriction_1 = require("./itemRestriction");
+const logCreateInput_1 = require("./logCreateInput");
+const logRecord_1 = require("./logRecord");
+const magentoProxyConnectionData_1 = require("./magentoProxyConnectionData");
+const magentoProxyConnectionDataInput_1 = require("./magentoProxyConnectionDataInput");
 const money_1 = require("./money");
 const moneyInput_1 = require("./moneyInput");
+const notificationSubscription_1 = require("./notificationSubscription");
+const notificationSubscriptionConfiguration_1 = require("./notificationSubscriptionConfiguration");
+const notificationSubscriptionConfigurationInput_1 = require("./notificationSubscriptionConfigurationInput");
+const notificationSubscriptionCreateInput_1 = require("./notificationSubscriptionCreateInput");
+const notificationSubscriptionPage_1 = require("./notificationSubscriptionPage");
+const notificationSubscriptionRecipient_1 = require("./notificationSubscriptionRecipient");
+const notificationSubscriptionRecipientInput_1 = require("./notificationSubscriptionRecipientInput");
+const notificationType_1 = require("./notificationType");
 const pageCheckout_1 = require("./pageCheckout");
 const pageCheckoutTemplate_1 = require("./pageCheckoutTemplate");
+const pageConnection_1 = require("./pageConnection");
+const pageNotificationSubscription_1 = require("./pageNotificationSubscription");
 const pagePaymentLink_1 = require("./pagePaymentLink");
 const pagePaymentMethodDetail_1 = require("./pagePaymentMethodDetail");
 const pageTheme_1 = require("./pageTheme");
@@ -205,6 +274,11 @@ const paymentSettlementStatus_1 = require("./paymentSettlementStatus");
 const paymentStatus_1 = require("./paymentStatus");
 const paymentSummary_1 = require("./paymentSummary");
 const paymentVoidReason_1 = require("./paymentVoidReason");
+const refund_1 = require("./refund");
+const refundCreateInput_1 = require("./refundCreateInput");
+const refundFailureReason_1 = require("./refundFailureReason");
+const refundStatus_1 = require("./refundStatus");
+const resourceType_1 = require("./resourceType");
 const startEnd_1 = require("./startEnd");
 const statementExportRequest_1 = require("./statementExportRequest");
 const theme_1 = require("./theme");
@@ -215,8 +289,10 @@ const themeColors_1 = require("./themeColors");
 const themeColorsCreateInput_1 = require("./themeColorsCreateInput");
 const themeColorsUpdateInput_1 = require("./themeColorsUpdateInput");
 const themeCreateInput_1 = require("./themeCreateInput");
+const themeDesktopBackgroundImage_1 = require("./themeDesktopBackgroundImage");
 const themeImageCreateInput_1 = require("./themeImageCreateInput");
 const themeImageUpdateInput_1 = require("./themeImageUpdateInput");
+const themeMobileBackgroundImage_1 = require("./themeMobileBackgroundImage");
 const themePage_1 = require("./themePage");
 const themePaymentMethodSelector_1 = require("./themePaymentMethodSelector");
 const themePaymentMethodSelectorColors_1 = require("./themePaymentMethodSelectorColors");
@@ -246,15 +322,25 @@ let enumsMap = {
     "AccountStatementConnectionType": accountStatementConnectionType_1.AccountStatementConnectionType,
     "AccountStatementInvoiceStatus": accountStatementInvoiceStatus_1.AccountStatementInvoiceStatus,
     "AccountStatementStatus": accountStatementStatus_1.AccountStatementStatus,
+    "ActionType": actionType_1.ActionType,
+    "ActionTypeInput": actionTypeInput_1.ActionTypeInput,
+    "ActorType": actorType_1.ActorType,
     "ApplicationSource": applicationSource_1.ApplicationSource,
     "CheckoutAmountType": checkoutAmountType_1.CheckoutAmountType,
     "CheckoutCustomerFieldType": checkoutCustomerFieldType_1.CheckoutCustomerFieldType,
     "CheckoutMode": checkoutMode_1.CheckoutMode,
+    "CheckoutReferenceType": checkoutReferenceType_1.CheckoutReferenceType,
     "CheckoutStatus": checkoutStatus_1.CheckoutStatus,
     "CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum": checkoutTemplateCreateInput_1.CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum,
     "CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum": checkoutTemplateUpdateInput_1.CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum,
+    "ConnectionOauthSignatureMethod": connectionOauthSignatureMethod_1.ConnectionOauthSignatureMethod,
+    "ConnectionStatus": connectionStatus_1.ConnectionStatus,
+    "ConnectionType": connectionType_1.ConnectionType,
     "ItemRestriction": itemRestriction_1.ItemRestriction,
     "MoneyInput.CurrencyEnum": moneyInput_1.MoneyInput.CurrencyEnum,
+    "NotificationSubscriptionConfiguration.AllowedChannelsEnum": notificationSubscriptionConfiguration_1.NotificationSubscriptionConfiguration.AllowedChannelsEnum,
+    "NotificationSubscriptionConfigurationInput.AllowedChannelsEnum": notificationSubscriptionConfigurationInput_1.NotificationSubscriptionConfigurationInput.AllowedChannelsEnum,
+    "NotificationType": notificationType_1.NotificationType,
     "PaymentActionMethod": paymentActionMethod_1.PaymentActionMethod,
     "PaymentActionType": paymentActionType_1.PaymentActionType,
     "PaymentCaptureType": paymentCaptureType_1.PaymentCaptureType,
@@ -267,6 +353,9 @@ let enumsMap = {
     "PaymentSettlementStatus": paymentSettlementStatus_1.PaymentSettlementStatus,
     "PaymentStatus": paymentStatus_1.PaymentStatus,
     "PaymentVoidReason": paymentVoidReason_1.PaymentVoidReason,
+    "RefundFailureReason": refundFailureReason_1.RefundFailureReason,
+    "RefundStatus": refundStatus_1.RefundStatus,
+    "ResourceType": resourceType_1.ResourceType,
     "StatementExportRequest.ExportFormatEnum": statementExportRequest_1.StatementExportRequest.ExportFormatEnum,
     "WebhookEventType": webhookEventType_1.WebhookEventType,
     "WebhookStatus": webhookStatus_1.WebhookStatus,
@@ -276,6 +365,8 @@ let typeMap = {
     "AccountStatementConnection": accountStatementConnection_1.AccountStatementConnection,
     "AccountStatementConnectionInput": accountStatementConnectionInput_1.AccountStatementConnectionInput,
     "AccountStatementCreateInput": accountStatementCreateInput_1.AccountStatementCreateInput,
+    "AccountStatementCreditNote": accountStatementCreditNote_1.AccountStatementCreditNote,
+    "AccountStatementCreditNoteCreateInput": accountStatementCreditNoteCreateInput_1.AccountStatementCreditNoteCreateInput,
     "AccountStatementInvoice": accountStatementInvoice_1.AccountStatementInvoice,
     "AccountStatementInvoiceCreateInput": accountStatementInvoiceCreateInput_1.AccountStatementInvoiceCreateInput,
     "AccountStatementMagentoProxyConnection": accountStatementMagentoProxyConnection_1.AccountStatementMagentoProxyConnection,
@@ -293,6 +384,9 @@ let typeMap = {
     "CheckoutCustomerFields": checkoutCustomerFields_1.CheckoutCustomerFields,
     "CheckoutCustomerFieldsInput": checkoutCustomerFieldsInput_1.CheckoutCustomerFieldsInput,
     "CheckoutCustomerFieldsUpdateInput": checkoutCustomerFieldsUpdateInput_1.CheckoutCustomerFieldsUpdateInput,
+    "CheckoutGooglePaySettings": checkoutGooglePaySettings_1.CheckoutGooglePaySettings,
+    "CheckoutGooglePaySettingsInput": checkoutGooglePaySettingsInput_1.CheckoutGooglePaySettingsInput,
+    "CheckoutGooglePaySettingsUpdateInput": checkoutGooglePaySettingsUpdateInput_1.CheckoutGooglePaySettingsUpdateInput,
     "CheckoutPage": checkoutPage_1.CheckoutPage,
     "CheckoutPayByBankSettings": checkoutPayByBankSettings_1.CheckoutPayByBankSettings,
     "CheckoutPayByBankSettingsInput": checkoutPayByBankSettingsInput_1.CheckoutPayByBankSettingsInput,
@@ -304,16 +398,34 @@ let typeMap = {
     "CheckoutTemplateCreateInput": checkoutTemplateCreateInput_1.CheckoutTemplateCreateInput,
     "CheckoutTemplatePage": checkoutTemplatePage_1.CheckoutTemplatePage,
     "CheckoutTemplateUpdateInput": checkoutTemplateUpdateInput_1.CheckoutTemplateUpdateInput,
+    "Connection": connection_1.Connection,
+    "ConnectionCreateInput": connectionCreateInput_1.ConnectionCreateInput,
+    "ConnectionData": connectionData_1.ConnectionData,
+    "ConnectionDataInput": connectionDataInput_1.ConnectionDataInput,
+    "ConnectionPage": connectionPage_1.ConnectionPage,
     "Customer": customer_1.Customer,
     "CustomerInput": customerInput_1.CustomerInput,
-    "Image": image_1.Image,
-    "ImageUrl": imageUrl_1.ImageUrl,
+    "GooglePayConnectionData": googlePayConnectionData_1.GooglePayConnectionData,
+    "GooglePayConnectionDataInput": googlePayConnectionDataInput_1.GooglePayConnectionDataInput,
     "Item": item_1.Item,
     "ItemInput": itemInput_1.ItemInput,
+    "LogCreateInput": logCreateInput_1.LogCreateInput,
+    "LogRecord": logRecord_1.LogRecord,
+    "MagentoProxyConnectionData": magentoProxyConnectionData_1.MagentoProxyConnectionData,
+    "MagentoProxyConnectionDataInput": magentoProxyConnectionDataInput_1.MagentoProxyConnectionDataInput,
     "Money": money_1.Money,
     "MoneyInput": moneyInput_1.MoneyInput,
+    "NotificationSubscription": notificationSubscription_1.NotificationSubscription,
+    "NotificationSubscriptionConfiguration": notificationSubscriptionConfiguration_1.NotificationSubscriptionConfiguration,
+    "NotificationSubscriptionConfigurationInput": notificationSubscriptionConfigurationInput_1.NotificationSubscriptionConfigurationInput,
+    "NotificationSubscriptionCreateInput": notificationSubscriptionCreateInput_1.NotificationSubscriptionCreateInput,
+    "NotificationSubscriptionPage": notificationSubscriptionPage_1.NotificationSubscriptionPage,
+    "NotificationSubscriptionRecipient": notificationSubscriptionRecipient_1.NotificationSubscriptionRecipient,
+    "NotificationSubscriptionRecipientInput": notificationSubscriptionRecipientInput_1.NotificationSubscriptionRecipientInput,
     "PageCheckout": pageCheckout_1.PageCheckout,
     "PageCheckoutTemplate": pageCheckoutTemplate_1.PageCheckoutTemplate,
+    "PageConnection": pageConnection_1.PageConnection,
+    "PageNotificationSubscription": pageNotificationSubscription_1.PageNotificationSubscription,
     "PagePaymentLink": pagePaymentLink_1.PagePaymentLink,
     "PagePaymentMethodDetail": pagePaymentMethodDetail_1.PagePaymentMethodDetail,
     "PageTheme": pageTheme_1.PageTheme,
@@ -333,6 +445,8 @@ let typeMap = {
     "PaymentSession": paymentSession_1.PaymentSession,
     "PaymentSessionCreateInput": paymentSessionCreateInput_1.PaymentSessionCreateInput,
     "PaymentSummary": paymentSummary_1.PaymentSummary,
+    "Refund": refund_1.Refund,
+    "RefundCreateInput": refundCreateInput_1.RefundCreateInput,
     "StartEnd": startEnd_1.StartEnd,
     "StatementExportRequest": statementExportRequest_1.StatementExportRequest,
     "Theme": theme_1.Theme,
@@ -343,8 +457,10 @@ let typeMap = {
     "ThemeColorsCreateInput": themeColorsCreateInput_1.ThemeColorsCreateInput,
     "ThemeColorsUpdateInput": themeColorsUpdateInput_1.ThemeColorsUpdateInput,
     "ThemeCreateInput": themeCreateInput_1.ThemeCreateInput,
+    "ThemeDesktopBackgroundImage": themeDesktopBackgroundImage_1.ThemeDesktopBackgroundImage,
     "ThemeImageCreateInput": themeImageCreateInput_1.ThemeImageCreateInput,
     "ThemeImageUpdateInput": themeImageUpdateInput_1.ThemeImageUpdateInput,
+    "ThemeMobileBackgroundImage": themeMobileBackgroundImage_1.ThemeMobileBackgroundImage,
     "ThemePage": themePage_1.ThemePage,
     "ThemePaymentMethodSelector": themePaymentMethodSelector_1.ThemePaymentMethodSelector,
     "ThemePaymentMethodSelectorColors": themePaymentMethodSelectorColors_1.ThemePaymentMethodSelectorColors,

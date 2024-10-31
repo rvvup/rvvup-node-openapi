@@ -10,18 +10,46 @@
  * Do not edit the class manually.
  */
 import { AccountStatementConnection } from './accountStatementConnection';
+import { AccountStatementCreditNote } from './accountStatementCreditNote';
 import { AccountStatementInvoice } from './accountStatementInvoice';
 import { AccountStatementStatus } from './accountStatementStatus';
 /**
 * The account statement.
 */
 export declare class AccountStatement {
-    'checkoutIds': Array<string>;
+    /**
+    * A list of successful checkouts that have been made for the statement.
+    */
+    'checkoutIds': Set<string>;
     'connection'?: AccountStatementConnection;
+    /**
+    * The credit notes of the account statement.
+    */
+    'creditNotes': Array<AccountStatementCreditNote>;
+    /**
+    * The unique ID of the account statement.
+    */
     'id': string;
+    /**
+    * The invoices of the account statement.
+    */
     'invoices': Array<AccountStatementInvoice>;
+    /**
+    * The ID of the merchant that owns this account statement.
+    */
     'merchantId': string;
+    /**
+    * A list of checkouts that have in progress pending payments for the statement.
+    */
+    'pendingCheckoutIds': Set<string>;
+    /**
+    * The reference of the account statement.
+    */
+    'reference'?: string;
     'status': AccountStatementStatus;
+    /**
+    * The URL to the account statement page.
+    */
     'url': string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

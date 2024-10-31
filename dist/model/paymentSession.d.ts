@@ -23,6 +23,7 @@ export declare class PaymentSession {
     */
     'checkoutId'?: string;
     'checkoutMode': CheckoutMode;
+    'checkoutModeId'?: string;
     /**
     * The datetime when the payment session was created.
     */

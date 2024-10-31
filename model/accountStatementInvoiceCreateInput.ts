@@ -19,8 +19,27 @@ import { MoneyInput } from './moneyInput';
 export class AccountStatementInvoiceCreateInput {
     'amountPaid': MoneyInput;
     'amountRemaining': MoneyInput;
-    'invoiceDate'?: Date;
+    /**
+    * The due date of the invoice.
+    */
+    'dueDate': Date;
+    /**
+    * The created date of the invoice.
+    */
+    'invoiceDate': Date;
+    /**
+    * Key value pairs to store additional information about the invoice.
+    */
+    'metadata'?: { [key: string]: string; };
+    /**
+    * The date the invoice was fully paid.
+    */
+    'paidDate'?: Date;
+    /**
+    * The reference of the invoice.
+    */
     'reference': string;
+    'taxAmount': MoneyInput;
     'total': MoneyInput;
 
     static discriminator: string | undefined = undefined;
@@ -37,14 +56,34 @@ export class AccountStatementInvoiceCreateInput {
             "type": "MoneyInput"
         },
         {
+            "name": "dueDate",
+            "baseName": "dueDate",
+            "type": "Date"
+        },
+        {
             "name": "invoiceDate",
             "baseName": "invoiceDate",
+            "type": "Date"
+        },
+        {
+            "name": "metadata",
+            "baseName": "metadata",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "paidDate",
+            "baseName": "paidDate",
             "type": "Date"
         },
         {
             "name": "reference",
             "baseName": "reference",
             "type": "string"
+        },
+        {
+            "name": "taxAmount",
+            "baseName": "taxAmount",
+            "type": "MoneyInput"
         },
         {
             "name": "total",

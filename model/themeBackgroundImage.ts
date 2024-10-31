@@ -11,14 +11,15 @@
  */
 
 import { RequestFile } from './models';
-import { Image } from './image';
+import { ThemeDesktopBackgroundImage } from './themeDesktopBackgroundImage';
+import { ThemeMobileBackgroundImage } from './themeMobileBackgroundImage';
 
 /**
 * The background images for the theme.
 */
 export class ThemeBackgroundImage {
-    'desktop'?: Image;
-    'mobile'?: Image;
+    'desktop'?: ThemeDesktopBackgroundImage;
+    'mobile'?: ThemeMobileBackgroundImage;
 
     static discriminator: string | undefined = undefined;
 
@@ -26,12 +27,12 @@ export class ThemeBackgroundImage {
         {
             "name": "desktop",
             "baseName": "desktop",
-            "type": "Image"
+            "type": "ThemeDesktopBackgroundImage"
         },
         {
             "name": "mobile",
             "baseName": "mobile",
-            "type": "Image"
+            "type": "ThemeMobileBackgroundImage"
         }    ];
 
     static getAttributeTypeMap() {

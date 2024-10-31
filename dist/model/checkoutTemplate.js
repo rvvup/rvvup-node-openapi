@@ -45,6 +45,7 @@ class CheckoutTemplate {
     */
     'notifyMerchant';
     'paymentMethodSettings';
+    'referenceType';
     'source';
     /**
     * The datetime when the checkout template was last updated.
@@ -106,6 +107,11 @@ class CheckoutTemplate {
             "name": "paymentMethodSettings",
             "baseName": "paymentMethodSettings",
             "type": "CheckoutPaymentMethodSettings"
+        },
+        {
+            "name": "referenceType",
+            "baseName": "referenceType",
+            "type": "CheckoutReferenceType"
         },
         {
             "name": "source",

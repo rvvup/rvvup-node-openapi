@@ -17,9 +17,14 @@ const accountStatementConnection_1 = require("./accountStatementConnection");
 * Data for the magento proxy connection.
 */
 class AccountStatementMagentoProxyConnection extends accountStatementConnection_1.AccountStatementConnection {
+    /**
+    * The magento proxy account ID.
+    */
     'accountId';
+    /**
+    * The magento proxy company ID.
+    */
     'companyId';
-    'statementId';
     static discriminator = undefined;
     static attributeTypeMap = [
         {
@@ -30,11 +35,6 @@ class AccountStatementMagentoProxyConnection extends accountStatementConnection_
         {
             "name": "companyId",
             "baseName": "companyId",
-            "type": "string"
-        },
-        {
-            "name": "statementId",
-            "baseName": "statementId",
             "type": "string"
         }
     ];

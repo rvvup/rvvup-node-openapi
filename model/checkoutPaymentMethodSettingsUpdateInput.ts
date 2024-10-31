@@ -13,6 +13,7 @@
 import { RequestFile } from './models';
 import { CheckoutApplePaySettingsUpdateInput } from './checkoutApplePaySettingsUpdateInput';
 import { CheckoutCardSettingsUpdateInput } from './checkoutCardSettingsUpdateInput';
+import { CheckoutGooglePaySettingsUpdateInput } from './checkoutGooglePaySettingsUpdateInput';
 import { CheckoutPayByBankSettingsUpdateInput } from './checkoutPayByBankSettingsUpdateInput';
 
 /**
@@ -21,6 +22,7 @@ import { CheckoutPayByBankSettingsUpdateInput } from './checkoutPayByBankSetting
 export class CheckoutPaymentMethodSettingsUpdateInput {
     'applePay'?: CheckoutApplePaySettingsUpdateInput;
     'card'?: CheckoutCardSettingsUpdateInput;
+    'googlePay'?: CheckoutGooglePaySettingsUpdateInput;
     'payByBank'?: CheckoutPayByBankSettingsUpdateInput;
 
     static discriminator: string | undefined = undefined;
@@ -35,6 +37,11 @@ export class CheckoutPaymentMethodSettingsUpdateInput {
             "name": "card",
             "baseName": "card",
             "type": "CheckoutCardSettingsUpdateInput"
+        },
+        {
+            "name": "googlePay",
+            "baseName": "googlePay",
+            "type": "CheckoutGooglePaySettingsUpdateInput"
         },
         {
             "name": "payByBank",

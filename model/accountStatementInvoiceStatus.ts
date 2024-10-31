@@ -18,5 +18,6 @@ import { RequestFile } from './models';
 export enum AccountStatementInvoiceStatus {
     Unpaid = <any> 'UNPAID',
     PartiallyPaid = <any> 'PARTIALLY_PAID',
-    Paid = <any> 'PAID'
+    Paid = <any> 'PAID',
+    Overpaid = <any> 'OVERPAID'
 }

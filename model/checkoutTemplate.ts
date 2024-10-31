@@ -16,6 +16,7 @@ import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFields } from './checkoutCustomerFields';
 import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettings } from './checkoutPaymentMethodSettings';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 import { PaymentMethod } from './paymentMethod';
 
 export class CheckoutTemplate {
@@ -51,6 +52,7 @@ export class CheckoutTemplate {
     */
     'notifyMerchant': boolean;
     'paymentMethodSettings'?: CheckoutPaymentMethodSettings;
+    'referenceType': CheckoutReferenceType;
     'source': ApplicationSource;
     /**
     * The datetime when the checkout template was last updated.
@@ -114,6 +116,11 @@ export class CheckoutTemplate {
             "name": "paymentMethodSettings",
             "baseName": "paymentMethodSettings",
             "type": "CheckoutPaymentMethodSettings"
+        },
+        {
+            "name": "referenceType",
+            "baseName": "referenceType",
+            "type": "CheckoutReferenceType"
         },
         {
             "name": "source",

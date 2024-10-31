@@ -17,6 +17,8 @@ import http from 'http';
 /* tslint:disable:no-unused-locals */
 import { AccountStatement } from '../model/accountStatement';
 import { AccountStatementCreateInput } from '../model/accountStatementCreateInput';
+import { Checkout } from '../model/checkout';
+import { Theme } from '../model/theme';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -98,8 +100,9 @@ export class AccountStatementsApi {
      * @summary Create a new account statement
      * @param merchantId Merchant ID
      * @param accountStatementCreateInput The account statement to create
+     * @param idempotencyKey Idempotency Key
      */
-    public async createAccountStatement (merchantId: string, accountStatementCreateInput: AccountStatementCreateInput, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AccountStatement;  }> {
+    public async createAccountStatement (merchantId: string, accountStatementCreateInput: AccountStatementCreateInput, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AccountStatement;  }> {
         const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements'
             .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)));
         let localVarQueryParameters: any = {};
@@ -123,6 +126,7 @@ export class AccountStatementsApi {
             throw new Error('Required parameter accountStatementCreateInput was null or undefined when calling createAccountStatement.');
         }
 
+        localVarHeaderParams['Idempotency-Key'] = ObjectSerializer.serialize(idempotencyKey, "string");
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
         let localVarUseFormData = false;
@@ -242,6 +246,171 @@ export class AccountStatementsApi {
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             body = ObjectSerializer.deserialize(body, "AccountStatement");
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Get a checkout for an account statement by ID
+     * @summary Get a checkout for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     * @param checkoutId Checkout ID
+     */
+    public async getCheckoutForAccountStatement (merchantId: string, accountStatementId: string, checkoutId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Checkout;  }> {
+        const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements/{accountStatementId}/checkouts/{checkoutId}'
+            .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)))
+            .replace('{' + 'accountStatementId' + '}', encodeURIComponent(String(accountStatementId)))
+            .replace('{' + 'checkoutId' + '}', encodeURIComponent(String(checkoutId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'merchantId' is not null or undefined
+        if (merchantId === null || merchantId === undefined) {
+            throw new Error('Required parameter merchantId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+
+        // verify required parameter 'accountStatementId' is not null or undefined
+        if (accountStatementId === null || accountStatementId === undefined) {
+            throw new Error('Required parameter accountStatementId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+
+        // verify required parameter 'checkoutId' is not null or undefined
+        if (checkoutId === null || checkoutId === undefined) {
+            throw new Error('Required parameter checkoutId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.apiKey.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.apiKey.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: Checkout;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = ObjectSerializer.deserialize(body, "Checkout");
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Gets the theme for an account statement. The theme is used to style the page.
+     * @summary Get the theme for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     */
+    public async getThemeForAccountStatement (merchantId: string, accountStatementId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Theme;  }> {
+        const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements/{accountStatementId}/theme'
+            .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)))
+            .replace('{' + 'accountStatementId' + '}', encodeURIComponent(String(accountStatementId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'merchantId' is not null or undefined
+        if (merchantId === null || merchantId === undefined) {
+            throw new Error('Required parameter merchantId was null or undefined when calling getThemeForAccountStatement.');
+        }
+
+        // verify required parameter 'accountStatementId' is not null or undefined
+        if (accountStatementId === null || accountStatementId === undefined) {
+            throw new Error('Required parameter accountStatementId was null or undefined when calling getThemeForAccountStatement.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.apiKey.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.apiKey.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: Theme;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = ObjectSerializer.deserialize(body, "Theme");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

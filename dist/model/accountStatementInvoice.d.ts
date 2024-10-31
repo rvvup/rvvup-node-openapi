@@ -16,13 +16,48 @@ import { Money } from './money';
 */
 export declare class AccountStatementInvoice {
     'amountPaid': Money;
+    'amountPending': Money;
     'amountRemaining': Money;
-    'checkoutIds': Array<string>;
+    /**
+    * A list of successful checkouts that have been made for the invoice.
+    */
+    'checkoutIds': Set<string>;
+    /**
+    * The due date of the invoice.
+    */
+    'dueDate': Date;
+    /**
+    * The unique ID of the invoice.
+    */
     'id': string;
+    /**
+    * The created date of the invoice.
+    */
     'invoiceDate': Date;
+    /**
+    * The ID of the merchant that owns the invoice.
+    */
     'merchantId': string;
+    /**
+    * Key value pairs to store additional information about the invoice.
+    */
+    'metadata': {
+        [key: string]: string;
+    };
+    /**
+    * The date the invoice was fully paid.
+    */
+    'paidDate'?: Date;
+    /**
+    * A list of checkouts that have in progress pending payments for the invoice.
+    */
+    'pendingCheckoutIds': Set<string>;
+    /**
+    * The reference of the invoice.
+    */
     'reference': string;
     'status': AccountStatementInvoiceStatus;
+    'taxAmount': Money;
     'total': Money;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

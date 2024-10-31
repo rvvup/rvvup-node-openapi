@@ -15,5 +15,6 @@
 export declare enum AccountStatementInvoiceStatus {
     Unpaid,
     PartiallyPaid,
-    Paid
+    Paid,
+    Overpaid
 }

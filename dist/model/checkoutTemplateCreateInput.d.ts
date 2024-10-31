@@ -14,6 +14,7 @@ import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsInput } from './checkoutCustomerFieldsInput';
 import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettingsInput } from './checkoutPaymentMethodSettingsInput';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 /**
 * The input for creating a checkout template.
 */
@@ -38,6 +39,7 @@ export declare class CheckoutTemplateCreateInput {
     */
     'notifyMerchant'?: boolean;
     'paymentMethodSettings'?: CheckoutPaymentMethodSettingsInput;
+    'referenceType'?: CheckoutReferenceType;
     'source'?: ApplicationSource;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

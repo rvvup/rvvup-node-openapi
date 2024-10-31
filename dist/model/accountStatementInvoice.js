@@ -17,19 +17,57 @@ exports.AccountStatementInvoice = void 0;
 */
 class AccountStatementInvoice {
     'amountPaid';
+    'amountPending';
     'amountRemaining';
+    /**
+    * A list of successful checkouts that have been made for the invoice.
+    */
     'checkoutIds';
+    /**
+    * The due date of the invoice.
+    */
+    'dueDate';
+    /**
+    * The unique ID of the invoice.
+    */
     'id';
+    /**
+    * The created date of the invoice.
+    */
     'invoiceDate';
+    /**
+    * The ID of the merchant that owns the invoice.
+    */
     'merchantId';
+    /**
+    * Key value pairs to store additional information about the invoice.
+    */
+    'metadata';
+    /**
+    * The date the invoice was fully paid.
+    */
+    'paidDate';
+    /**
+    * A list of checkouts that have in progress pending payments for the invoice.
+    */
+    'pendingCheckoutIds';
+    /**
+    * The reference of the invoice.
+    */
     'reference';
     'status';
+    'taxAmount';
     'total';
     static discriminator = undefined;
     static attributeTypeMap = [
         {
             "name": "amountPaid",
             "baseName": "amountPaid",
+            "type": "Money"
+        },
+        {
+            "name": "amountPending",
+            "baseName": "amountPending",
             "type": "Money"
         },
         {
@@ -40,7 +78,12 @@ class AccountStatementInvoice {
         {
             "name": "checkoutIds",
             "baseName": "checkoutIds",
-            "type": "Array<string>"
+            "type": "Set<string>"
+        },
+        {
+            "name": "dueDate",
+            "baseName": "dueDate",
+            "type": "Date"
         },
         {
             "name": "id",
@@ -58,6 +101,21 @@ class AccountStatementInvoice {
             "type": "string"
         },
         {
+            "name": "metadata",
+            "baseName": "metadata",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "paidDate",
+            "baseName": "paidDate",
+            "type": "Date"
+        },
+        {
+            "name": "pendingCheckoutIds",
+            "baseName": "pendingCheckoutIds",
+            "type": "Set<string>"
+        },
+        {
             "name": "reference",
             "baseName": "reference",
             "type": "string"
@@ -66,6 +124,11 @@ class AccountStatementInvoice {
             "name": "status",
             "baseName": "status",
             "type": "AccountStatementInvoiceStatus"
+        },
+        {
+            "name": "taxAmount",
+            "baseName": "taxAmount",
+            "type": "Money"
         },
         {
             "name": "total",

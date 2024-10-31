@@ -17,9 +17,18 @@ const accountStatementConnectionInput_1 = require("./accountStatementConnectionI
 * Data for the magento proxy connection.
 */
 class AccountStatementMagentoProxyConnectionInput extends accountStatementConnectionInput_1.AccountStatementConnectionInput {
+    /**
+    * The magento proxy account ID.
+    */
     'accountId';
+    /**
+    * The magento proxy company ID.
+    */
     'companyId';
-    'statementId';
+    /**
+    * The magento proxy invoice ID.
+    */
+    'invoiceId';
     static discriminator = undefined;
     static attributeTypeMap = [
         {
@@ -33,8 +42,8 @@ class AccountStatementMagentoProxyConnectionInput extends accountStatementConnec
             "type": "string"
         },
         {
-            "name": "statementId",
-            "baseName": "statementId",
+            "name": "invoiceId",
+            "baseName": "invoiceId",
             "type": "string"
         }
     ];

@@ -23,12 +23,12 @@ class ThemeBackgroundImage {
         {
             "name": "desktop",
             "baseName": "desktop",
-            "type": "Image"
+            "type": "ThemeDesktopBackgroundImage"
         },
         {
             "name": "mobile",
             "baseName": "mobile",
-            "type": "Image"
+            "type": "ThemeMobileBackgroundImage"
         }
     ];
     static getAttributeTypeMap() {

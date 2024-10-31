@@ -12,7 +12,6 @@
 
 import { RequestFile } from './models';
 import { AccountStatementConnectionType } from './accountStatementConnectionType';
-import { AccountStatementMagentoProxyConnectionInput } from './accountStatementMagentoProxyConnectionInput';
 
 /**
 * The input to define which connection should be used for this statement with associated data.

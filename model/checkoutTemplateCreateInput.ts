@@ -16,6 +16,7 @@ import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFieldsInput } from './checkoutCustomerFieldsInput';
 import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettingsInput } from './checkoutPaymentMethodSettingsInput';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 import { PaymentMethod } from './paymentMethod';
 
 /**
@@ -42,6 +43,7 @@ export class CheckoutTemplateCreateInput {
     */
     'notifyMerchant'?: boolean = false;
     'paymentMethodSettings'?: CheckoutPaymentMethodSettingsInput;
+    'referenceType'?: CheckoutReferenceType;
     'source'?: ApplicationSource;
 
     static discriminator: string | undefined = undefined;
@@ -86,6 +88,11 @@ export class CheckoutTemplateCreateInput {
             "name": "paymentMethodSettings",
             "baseName": "paymentMethodSettings",
             "type": "CheckoutPaymentMethodSettingsInput"
+        },
+        {
+            "name": "referenceType",
+            "baseName": "referenceType",
+            "type": "CheckoutReferenceType"
         },
         {
             "name": "source",

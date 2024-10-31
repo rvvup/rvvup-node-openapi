@@ -12,6 +12,7 @@
 
 import { RequestFile } from './models';
 import { AccountStatementConnectionInput } from './accountStatementConnectionInput';
+import { AccountStatementCreditNoteCreateInput } from './accountStatementCreditNoteCreateInput';
 import { AccountStatementInvoiceCreateInput } from './accountStatementInvoiceCreateInput';
 
 /**
@@ -19,7 +20,18 @@ import { AccountStatementInvoiceCreateInput } from './accountStatementInvoiceCre
 */
 export class AccountStatementCreateInput {
     'connection'?: AccountStatementConnectionInput;
+    /**
+    * The credit notes of the account statement.
+    */
+    'creditNotes'?: Array<AccountStatementCreditNoteCreateInput>;
+    /**
+    * The invoices of the account statement.
+    */
     'invoices'?: Array<AccountStatementInvoiceCreateInput>;
+    /**
+    * The reference of the account statement.
+    */
+    'reference'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -30,9 +42,19 @@ export class AccountStatementCreateInput {
             "type": "AccountStatementConnectionInput"
         },
         {
+            "name": "creditNotes",
+            "baseName": "creditNotes",
+            "type": "Array<AccountStatementCreditNoteCreateInput>"
+        },
+        {
             "name": "invoices",
             "baseName": "invoices",
             "type": "Array<AccountStatementInvoiceCreateInput>"
+        },
+        {
+            "name": "reference",
+            "baseName": "reference",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

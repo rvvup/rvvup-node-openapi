@@ -20,5 +20,6 @@ var AccountStatementInvoiceStatus;
     AccountStatementInvoiceStatus[AccountStatementInvoiceStatus["Unpaid"] = 'UNPAID'] = "Unpaid";
     AccountStatementInvoiceStatus[AccountStatementInvoiceStatus["PartiallyPaid"] = 'PARTIALLY_PAID'] = "PartiallyPaid";
     AccountStatementInvoiceStatus[AccountStatementInvoiceStatus["Paid"] = 'PAID'] = "Paid";
+    AccountStatementInvoiceStatus[AccountStatementInvoiceStatus["Overpaid"] = 'OVERPAID'] = "Overpaid";
 })(AccountStatementInvoiceStatus || (exports.AccountStatementInvoiceStatus = AccountStatementInvoiceStatus = {}));
 //# sourceMappingURL=accountStatementInvoiceStatus.js.map

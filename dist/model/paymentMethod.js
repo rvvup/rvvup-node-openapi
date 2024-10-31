@@ -24,6 +24,7 @@ var PaymentMethod;
     PaymentMethod[PaymentMethod["PaypalCustomCard"] = 'PAYPAL_CUSTOM_CARD'] = "PaypalCustomCard";
     PaymentMethod[PaymentMethod["Card"] = 'CARD'] = "Card";
     PaymentMethod[PaymentMethod["ApplePay"] = 'APPLE_PAY'] = "ApplePay";
+    PaymentMethod[PaymentMethod["GooglePay"] = 'GOOGLE_PAY'] = "GooglePay";
     PaymentMethod[PaymentMethod["PayByBank"] = 'PAY_BY_BANK'] = "PayByBank";
 })(PaymentMethod || (exports.PaymentMethod = PaymentMethod = {}));
 //# sourceMappingURL=paymentMethod.js.map

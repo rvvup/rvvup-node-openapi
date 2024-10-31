@@ -14,9 +14,18 @@ import { AccountStatementConnectionInput } from './accountStatementConnectionInp
 * Data for the magento proxy connection.
 */
 export declare class AccountStatementMagentoProxyConnectionInput extends AccountStatementConnectionInput {
+    /**
+    * The magento proxy account ID.
+    */
     'accountId': string;
+    /**
+    * The magento proxy company ID.
+    */
     'companyId': string;
-    'statementId': string;
+    /**
+    * The magento proxy invoice ID.
+    */
+    'invoiceId': string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

@@ -16,24 +16,56 @@ exports.AccountStatement = void 0;
 * The account statement.
 */
 class AccountStatement {
+    /**
+    * A list of successful checkouts that have been made for the statement.
+    */
     'checkoutIds';
     'connection';
+    /**
+    * The credit notes of the account statement.
+    */
+    'creditNotes';
+    /**
+    * The unique ID of the account statement.
+    */
     'id';
+    /**
+    * The invoices of the account statement.
+    */
     'invoices';
+    /**
+    * The ID of the merchant that owns this account statement.
+    */
     'merchantId';
+    /**
+    * A list of checkouts that have in progress pending payments for the statement.
+    */
+    'pendingCheckoutIds';
+    /**
+    * The reference of the account statement.
+    */
+    'reference';
     'status';
+    /**
+    * The URL to the account statement page.
+    */
     'url';
     static discriminator = undefined;
     static attributeTypeMap = [
         {
             "name": "checkoutIds",
             "baseName": "checkoutIds",
-            "type": "Array<string>"
+            "type": "Set<string>"
         },
         {
             "name": "connection",
             "baseName": "connection",
             "type": "AccountStatementConnection"
+        },
+        {
+            "name": "creditNotes",
+            "baseName": "creditNotes",
+            "type": "Array<AccountStatementCreditNote>"
         },
         {
             "name": "id",
@@ -48,6 +80,16 @@ class AccountStatement {
         {
             "name": "merchantId",
             "baseName": "merchantId",
+            "type": "string"
+        },
+        {
+            "name": "pendingCheckoutIds",
+            "baseName": "pendingCheckoutIds",
+            "type": "Set<string>"
+        },
+        {
+            "name": "reference",
+            "baseName": "reference",
             "type": "string"
         },
         {

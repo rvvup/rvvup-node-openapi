@@ -12,6 +12,8 @@
 import http from 'http';
 import { AccountStatement } from '../model/accountStatement';
 import { AccountStatementCreateInput } from '../model/accountStatementCreateInput';
+import { Checkout } from '../model/checkout';
+import { Theme } from '../model/theme';
 import { Authentication, Interceptor } from '../model/models';
 import { HttpBearerAuth } from '../model/models';
 export declare enum AccountStatementsApiApiKeys {
@@ -40,8 +42,9 @@ export declare class AccountStatementsApi {
      * @summary Create a new account statement
      * @param merchantId Merchant ID
      * @param accountStatementCreateInput The account statement to create
+     * @param idempotencyKey Idempotency Key
      */
-    createAccountStatement(merchantId: string, accountStatementCreateInput: AccountStatementCreateInput, options?: {
+    createAccountStatement(merchantId: string, accountStatementCreateInput: AccountStatementCreateInput, idempotencyKey?: string, options?: {
         headers: {
             [name: string]: string;
         };
@@ -62,5 +65,34 @@ export declare class AccountStatementsApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AccountStatement;
+    }>;
+    /**
+     * Get a checkout for an account statement by ID
+     * @summary Get a checkout for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     * @param checkoutId Checkout ID
+     */
+    getCheckoutForAccountStatement(merchantId: string, accountStatementId: string, checkoutId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: Checkout;
+    }>;
+    /**
+     * Gets the theme for an account statement. The theme is used to style the page.
+     * @summary Get the theme for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     */
+    getThemeForAccountStatement(merchantId: string, accountStatementId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: Theme;
     }>;
 }

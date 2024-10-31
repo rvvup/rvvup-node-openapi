@@ -19,6 +19,10 @@ class CheckoutCreateInput {
     'amount';
     'billingAddress';
     /**
+    * The URL to redirect the user to if the checkout does not complete successfully.                          This field supports the template variable `{{CHECKOUT_ID}}` which will be replaced with the                          created checkouts ID.
+    */
+    'cancelUrl';
+    /**
     * The ID of the checkout template to use for this checkout.                          If not provided, the default template will be used.                          If provided, the template must be available to the merchant.
     */
     'checkoutTemplateId';
@@ -33,6 +37,10 @@ class CheckoutCreateInput {
     * ID related to this checkout mode. Required for the ACCOUNT_STATEMENT mode and should be set to the AccountStatement\'s ID.Automatically set for all other modes.
     */
     'modeId';
+    /**
+    * The URL to redirect the user to if the checkout falls into a pending payment flow.                          This field supports the template variable `{{CHECKOUT_ID}}` which will be replaced with the                          created checkouts ID.
+    */
+    'pendingUrl';
     /**
     * Your reference to identify the checkout and the subsequently created payment sessions.
     */
@@ -53,6 +61,11 @@ class CheckoutCreateInput {
             "name": "billingAddress",
             "baseName": "billingAddress",
             "type": "AddressInput"
+        },
+        {
+            "name": "cancelUrl",
+            "baseName": "cancelUrl",
+            "type": "string"
         },
         {
             "name": "checkoutTemplateId",
@@ -82,6 +95,11 @@ class CheckoutCreateInput {
         {
             "name": "modeId",
             "baseName": "modeId",
+            "type": "string"
+        },
+        {
+            "name": "pendingUrl",
+            "baseName": "pendingUrl",
             "type": "string"
         },
         {

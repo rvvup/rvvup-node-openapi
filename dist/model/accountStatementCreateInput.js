@@ -17,7 +17,18 @@ exports.AccountStatementCreateInput = void 0;
 */
 class AccountStatementCreateInput {
     'connection';
+    /**
+    * The credit notes of the account statement.
+    */
+    'creditNotes';
+    /**
+    * The invoices of the account statement.
+    */
     'invoices';
+    /**
+    * The reference of the account statement.
+    */
+    'reference';
     static discriminator = undefined;
     static attributeTypeMap = [
         {
@@ -26,9 +37,19 @@ class AccountStatementCreateInput {
             "type": "AccountStatementConnectionInput"
         },
         {
+            "name": "creditNotes",
+            "baseName": "creditNotes",
+            "type": "Array<AccountStatementCreditNoteCreateInput>"
+        },
+        {
             "name": "invoices",
             "baseName": "invoices",
             "type": "Array<AccountStatementInvoiceCreateInput>"
+        },
+        {
+            "name": "reference",
+            "baseName": "reference",
+            "type": "string"
         }
     ];
     static getAttributeTypeMap() {

@@ -11,6 +11,7 @@
  */
 import { CheckoutApplePaySettingsUpdateInput } from './checkoutApplePaySettingsUpdateInput';
 import { CheckoutCardSettingsUpdateInput } from './checkoutCardSettingsUpdateInput';
+import { CheckoutGooglePaySettingsUpdateInput } from './checkoutGooglePaySettingsUpdateInput';
 import { CheckoutPayByBankSettingsUpdateInput } from './checkoutPayByBankSettingsUpdateInput';
 /**
 * The payment method settings to be used for the checkout.
@@ -18,6 +19,7 @@ import { CheckoutPayByBankSettingsUpdateInput } from './checkoutPayByBankSetting
 export declare class CheckoutPaymentMethodSettingsUpdateInput {
     'applePay'?: CheckoutApplePaySettingsUpdateInput;
     'card'?: CheckoutCardSettingsUpdateInput;
+    'googlePay'?: CheckoutGooglePaySettingsUpdateInput;
     'payByBank'?: CheckoutPayByBankSettingsUpdateInput;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

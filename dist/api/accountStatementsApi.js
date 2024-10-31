@@ -79,8 +79,9 @@ class AccountStatementsApi {
      * @summary Create a new account statement
      * @param merchantId Merchant ID
      * @param accountStatementCreateInput The account statement to create
+     * @param idempotencyKey Idempotency Key
      */
-    async createAccountStatement(merchantId, accountStatementCreateInput, options = { headers: {} }) {
+    async createAccountStatement(merchantId, accountStatementCreateInput, idempotencyKey, options = { headers: {} }) {
         const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements'
             .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)));
         let localVarQueryParameters = {};
@@ -102,6 +103,7 @@ class AccountStatementsApi {
         if (accountStatementCreateInput === null || accountStatementCreateInput === undefined) {
             throw new Error('Required parameter accountStatementCreateInput was null or undefined when calling createAccountStatement.');
         }
+        localVarHeaderParams['Idempotency-Key'] = models_1.ObjectSerializer.serialize(idempotencyKey, "string");
         Object.assign(localVarHeaderParams, options.headers);
         let localVarUseFormData = false;
         let localVarRequestOptions = {
@@ -214,6 +216,162 @@ class AccountStatementsApi {
                     else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             body = models_1.ObjectSerializer.deserialize(body, "AccountStatement");
+                            resolve({ response: response, body: body });
+                        }
+                        else {
+                            reject(new apis_1.HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Get a checkout for an account statement by ID
+     * @summary Get a checkout for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     * @param checkoutId Checkout ID
+     */
+    async getCheckoutForAccountStatement(merchantId, accountStatementId, checkoutId, options = { headers: {} }) {
+        const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements/{accountStatementId}/checkouts/{checkoutId}'
+            .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)))
+            .replace('{' + 'accountStatementId' + '}', encodeURIComponent(String(accountStatementId)))
+            .replace('{' + 'checkoutId' + '}', encodeURIComponent(String(checkoutId)));
+        let localVarQueryParameters = {};
+        let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        }
+        else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams = {};
+        // verify required parameter 'merchantId' is not null or undefined
+        if (merchantId === null || merchantId === undefined) {
+            throw new Error('Required parameter merchantId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+        // verify required parameter 'accountStatementId' is not null or undefined
+        if (accountStatementId === null || accountStatementId === undefined) {
+            throw new Error('Required parameter accountStatementId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+        // verify required parameter 'checkoutId' is not null or undefined
+        if (checkoutId === null || checkoutId === undefined) {
+            throw new Error('Required parameter checkoutId was null or undefined when calling getCheckoutForAccountStatement.');
+        }
+        Object.assign(localVarHeaderParams, options.headers);
+        let localVarUseFormData = false;
+        let localVarRequestOptions = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.apiKey.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.apiKey.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    localVarRequestOptions.formData = localVarFormParams;
+                }
+                else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise((resolve, reject) => {
+                (0, request_1.default)(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    }
+                    else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = models_1.ObjectSerializer.deserialize(body, "Checkout");
+                            resolve({ response: response, body: body });
+                        }
+                        else {
+                            reject(new apis_1.HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Gets the theme for an account statement. The theme is used to style the page.
+     * @summary Get the theme for an account statement
+     * @param merchantId Merchant ID
+     * @param accountStatementId Account Statement ID
+     */
+    async getThemeForAccountStatement(merchantId, accountStatementId, options = { headers: {} }) {
+        const localVarPath = this.basePath + '/api/2024-03-01/{merchantId}/accounts/statements/{accountStatementId}/theme'
+            .replace('{' + 'merchantId' + '}', encodeURIComponent(String(merchantId)))
+            .replace('{' + 'accountStatementId' + '}', encodeURIComponent(String(accountStatementId)));
+        let localVarQueryParameters = {};
+        let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        }
+        else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams = {};
+        // verify required parameter 'merchantId' is not null or undefined
+        if (merchantId === null || merchantId === undefined) {
+            throw new Error('Required parameter merchantId was null or undefined when calling getThemeForAccountStatement.');
+        }
+        // verify required parameter 'accountStatementId' is not null or undefined
+        if (accountStatementId === null || accountStatementId === undefined) {
+            throw new Error('Required parameter accountStatementId was null or undefined when calling getThemeForAccountStatement.');
+        }
+        Object.assign(localVarHeaderParams, options.headers);
+        let localVarUseFormData = false;
+        let localVarRequestOptions = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.apiKey.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.apiKey.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    localVarRequestOptions.formData = localVarFormParams;
+                }
+                else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise((resolve, reject) => {
+                (0, request_1.default)(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    }
+                    else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = models_1.ObjectSerializer.deserialize(body, "Theme");
                             resolve({ response: response, body: body });
                         }
                         else {

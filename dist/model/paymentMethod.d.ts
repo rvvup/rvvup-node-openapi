@@ -20,5 +20,6 @@ export declare enum PaymentMethod {
     PaypalCustomCard,
     Card,
     ApplePay,
+    GooglePay,
     PayByBank
 }

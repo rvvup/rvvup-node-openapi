@@ -14,6 +14,7 @@ import { CheckoutAmountType } from './checkoutAmountType';
 import { CheckoutCustomerFields } from './checkoutCustomerFields';
 import { CheckoutMode } from './checkoutMode';
 import { CheckoutPaymentMethodSettings } from './checkoutPaymentMethodSettings';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 import { PaymentMethod } from './paymentMethod';
 export declare class CheckoutTemplate {
     'amountType': CheckoutAmountType;
@@ -48,6 +49,7 @@ export declare class CheckoutTemplate {
     */
     'notifyMerchant': boolean;
     'paymentMethodSettings'?: CheckoutPaymentMethodSettings;
+    'referenceType': CheckoutReferenceType;
     'source': ApplicationSource;
     /**
     * The datetime when the checkout template was last updated.

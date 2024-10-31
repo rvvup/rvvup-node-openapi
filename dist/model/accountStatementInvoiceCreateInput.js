@@ -18,8 +18,27 @@ exports.AccountStatementInvoiceCreateInput = void 0;
 class AccountStatementInvoiceCreateInput {
     'amountPaid';
     'amountRemaining';
+    /**
+    * The due date of the invoice.
+    */
+    'dueDate';
+    /**
+    * The created date of the invoice.
+    */
     'invoiceDate';
+    /**
+    * Key value pairs to store additional information about the invoice.
+    */
+    'metadata';
+    /**
+    * The date the invoice was fully paid.
+    */
+    'paidDate';
+    /**
+    * The reference of the invoice.
+    */
     'reference';
+    'taxAmount';
     'total';
     static discriminator = undefined;
     static attributeTypeMap = [
@@ -34,14 +53,34 @@ class AccountStatementInvoiceCreateInput {
             "type": "MoneyInput"
         },
         {
+            "name": "dueDate",
+            "baseName": "dueDate",
+            "type": "Date"
+        },
+        {
             "name": "invoiceDate",
             "baseName": "invoiceDate",
+            "type": "Date"
+        },
+        {
+            "name": "metadata",
+            "baseName": "metadata",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "paidDate",
+            "baseName": "paidDate",
             "type": "Date"
         },
         {
             "name": "reference",
             "baseName": "reference",
             "type": "string"
+        },
+        {
+            "name": "taxAmount",
+            "baseName": "taxAmount",
+            "type": "MoneyInput"
         },
         {
             "name": "total",

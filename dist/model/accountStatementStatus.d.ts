@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 /**
-* The status for this account statement.
+* The status of the account statement. Derived from the invoice data. If all invoices are paid, the account statement is considered paid.
 */
 export declare enum AccountStatementStatus {
     Unpaid,

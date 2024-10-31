@@ -13,7 +13,7 @@
 import { RequestFile } from './models';
 
 /**
-* The status for this account statement.
+* The status of the account statement. Derived from the invoice data. If all invoices are paid, the account statement is considered paid.
 */
 export enum AccountStatementStatus {
     Unpaid = <any> 'UNPAID',

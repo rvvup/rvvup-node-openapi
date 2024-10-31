@@ -18,6 +18,7 @@ exports.CheckoutPaymentMethodSettingsUpdateInput = void 0;
 class CheckoutPaymentMethodSettingsUpdateInput {
     'applePay';
     'card';
+    'googlePay';
     'payByBank';
     static discriminator = undefined;
     static attributeTypeMap = [
@@ -30,6 +31,11 @@ class CheckoutPaymentMethodSettingsUpdateInput {
             "name": "card",
             "baseName": "card",
             "type": "CheckoutCardSettingsUpdateInput"
+        },
+        {
+            "name": "googlePay",
+            "baseName": "googlePay",
+            "type": "CheckoutGooglePaySettingsUpdateInput"
         },
         {
             "name": "payByBank",

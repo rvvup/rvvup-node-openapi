@@ -5,12 +5,17 @@ export * from './accountStatementConnection';
 export * from './accountStatementConnectionInput';
 export * from './accountStatementConnectionType';
 export * from './accountStatementCreateInput';
+export * from './accountStatementCreditNote';
+export * from './accountStatementCreditNoteCreateInput';
 export * from './accountStatementInvoice';
 export * from './accountStatementInvoiceCreateInput';
 export * from './accountStatementInvoiceStatus';
 export * from './accountStatementMagentoProxyConnection';
 export * from './accountStatementMagentoProxyConnectionInput';
 export * from './accountStatementStatus';
+export * from './actionType';
+export * from './actionTypeInput';
+export * from './actorType';
 export * from './address';
 export * from './addressInput';
 export * from './applicationSource';
@@ -27,6 +32,9 @@ export * from './checkoutCustomerFieldType';
 export * from './checkoutCustomerFields';
 export * from './checkoutCustomerFieldsInput';
 export * from './checkoutCustomerFieldsUpdateInput';
+export * from './checkoutGooglePaySettings';
+export * from './checkoutGooglePaySettingsInput';
+export * from './checkoutGooglePaySettingsUpdateInput';
 export * from './checkoutMode';
 export * from './checkoutPage';
 export * from './checkoutPayByBankSettings';
@@ -35,22 +43,45 @@ export * from './checkoutPayByBankSettingsUpdateInput';
 export * from './checkoutPaymentMethodSettings';
 export * from './checkoutPaymentMethodSettingsInput';
 export * from './checkoutPaymentMethodSettingsUpdateInput';
+export * from './checkoutReferenceType';
 export * from './checkoutStatus';
 export * from './checkoutTemplate';
 export * from './checkoutTemplateCreateInput';
 export * from './checkoutTemplatePage';
 export * from './checkoutTemplateUpdateInput';
+export * from './connection';
+export * from './connectionCreateInput';
+export * from './connectionData';
+export * from './connectionDataInput';
+export * from './connectionOauthSignatureMethod';
+export * from './connectionPage';
+export * from './connectionStatus';
+export * from './connectionType';
 export * from './customer';
 export * from './customerInput';
-export * from './image';
-export * from './imageUrl';
+export * from './googlePayConnectionData';
+export * from './googlePayConnectionDataInput';
 export * from './item';
 export * from './itemInput';
 export * from './itemRestriction';
+export * from './logCreateInput';
+export * from './logRecord';
+export * from './magentoProxyConnectionData';
+export * from './magentoProxyConnectionDataInput';
 export * from './money';
 export * from './moneyInput';
+export * from './notificationSubscription';
+export * from './notificationSubscriptionConfiguration';
+export * from './notificationSubscriptionConfigurationInput';
+export * from './notificationSubscriptionCreateInput';
+export * from './notificationSubscriptionPage';
+export * from './notificationSubscriptionRecipient';
+export * from './notificationSubscriptionRecipientInput';
+export * from './notificationType';
 export * from './pageCheckout';
 export * from './pageCheckoutTemplate';
+export * from './pageConnection';
+export * from './pageNotificationSubscription';
 export * from './pagePaymentLink';
 export * from './pagePaymentMethodDetail';
 export * from './pageTheme';
@@ -82,6 +113,11 @@ export * from './paymentSettlementStatus';
 export * from './paymentStatus';
 export * from './paymentSummary';
 export * from './paymentVoidReason';
+export * from './refund';
+export * from './refundCreateInput';
+export * from './refundFailureReason';
+export * from './refundStatus';
+export * from './resourceType';
 export * from './startEnd';
 export * from './statementExportRequest';
 export * from './theme';
@@ -92,8 +128,10 @@ export * from './themeColors';
 export * from './themeColorsCreateInput';
 export * from './themeColorsUpdateInput';
 export * from './themeCreateInput';
+export * from './themeDesktopBackgroundImage';
 export * from './themeImageCreateInput';
 export * from './themeImageUpdateInput';
+export * from './themeMobileBackgroundImage';
 export * from './themePage';
 export * from './themePaymentMethodSelector';
 export * from './themePaymentMethodSelectorColors';
@@ -127,12 +165,17 @@ import { AccountStatementConnection } from './accountStatementConnection';
 import { AccountStatementConnectionInput } from './accountStatementConnectionInput';
 import { AccountStatementConnectionType } from './accountStatementConnectionType';
 import { AccountStatementCreateInput } from './accountStatementCreateInput';
+import { AccountStatementCreditNote } from './accountStatementCreditNote';
+import { AccountStatementCreditNoteCreateInput } from './accountStatementCreditNoteCreateInput';
 import { AccountStatementInvoice } from './accountStatementInvoice';
 import { AccountStatementInvoiceCreateInput } from './accountStatementInvoiceCreateInput';
 import { AccountStatementInvoiceStatus } from './accountStatementInvoiceStatus';
 import { AccountStatementMagentoProxyConnection } from './accountStatementMagentoProxyConnection';
 import { AccountStatementMagentoProxyConnectionInput } from './accountStatementMagentoProxyConnectionInput';
 import { AccountStatementStatus } from './accountStatementStatus';
+import { ActionType } from './actionType';
+import { ActionTypeInput } from './actionTypeInput';
+import { ActorType } from './actorType';
 import { Address } from './address';
 import { AddressInput } from './addressInput';
 import { ApplicationSource } from './applicationSource';
@@ -149,6 +192,9 @@ import { CheckoutCustomerFieldType } from './checkoutCustomerFieldType';
 import { CheckoutCustomerFields } from './checkoutCustomerFields';
 import { CheckoutCustomerFieldsInput } from './checkoutCustomerFieldsInput';
 import { CheckoutCustomerFieldsUpdateInput } from './checkoutCustomerFieldsUpdateInput';
+import { CheckoutGooglePaySettings } from './checkoutGooglePaySettings';
+import { CheckoutGooglePaySettingsInput } from './checkoutGooglePaySettingsInput';
+import { CheckoutGooglePaySettingsUpdateInput } from './checkoutGooglePaySettingsUpdateInput';
 import { CheckoutMode } from './checkoutMode';
 import { CheckoutPage } from './checkoutPage';
 import { CheckoutPayByBankSettings } from './checkoutPayByBankSettings';
@@ -157,22 +203,45 @@ import { CheckoutPayByBankSettingsUpdateInput } from './checkoutPayByBankSetting
 import { CheckoutPaymentMethodSettings } from './checkoutPaymentMethodSettings';
 import { CheckoutPaymentMethodSettingsInput } from './checkoutPaymentMethodSettingsInput';
 import { CheckoutPaymentMethodSettingsUpdateInput } from './checkoutPaymentMethodSettingsUpdateInput';
+import { CheckoutReferenceType } from './checkoutReferenceType';
 import { CheckoutStatus } from './checkoutStatus';
 import { CheckoutTemplate } from './checkoutTemplate';
 import { CheckoutTemplateCreateInput } from './checkoutTemplateCreateInput';
 import { CheckoutTemplatePage } from './checkoutTemplatePage';
 import { CheckoutTemplateUpdateInput } from './checkoutTemplateUpdateInput';
+import { Connection } from './connection';
+import { ConnectionCreateInput } from './connectionCreateInput';
+import { ConnectionData } from './connectionData';
+import { ConnectionDataInput } from './connectionDataInput';
+import { ConnectionOauthSignatureMethod } from './connectionOauthSignatureMethod';
+import { ConnectionPage } from './connectionPage';
+import { ConnectionStatus } from './connectionStatus';
+import { ConnectionType } from './connectionType';
 import { Customer } from './customer';
 import { CustomerInput } from './customerInput';
-import { Image } from './image';
-import { ImageUrl } from './imageUrl';
+import { GooglePayConnectionData } from './googlePayConnectionData';
+import { GooglePayConnectionDataInput } from './googlePayConnectionDataInput';
 import { Item } from './item';
 import { ItemInput } from './itemInput';
 import { ItemRestriction } from './itemRestriction';
+import { LogCreateInput } from './logCreateInput';
+import { LogRecord } from './logRecord';
+import { MagentoProxyConnectionData } from './magentoProxyConnectionData';
+import { MagentoProxyConnectionDataInput } from './magentoProxyConnectionDataInput';
 import { Money } from './money';
 import { MoneyInput } from './moneyInput';
+import { NotificationSubscription } from './notificationSubscription';
+import { NotificationSubscriptionConfiguration } from './notificationSubscriptionConfiguration';
+import { NotificationSubscriptionConfigurationInput } from './notificationSubscriptionConfigurationInput';
+import { NotificationSubscriptionCreateInput } from './notificationSubscriptionCreateInput';
+import { NotificationSubscriptionPage } from './notificationSubscriptionPage';
+import { NotificationSubscriptionRecipient } from './notificationSubscriptionRecipient';
+import { NotificationSubscriptionRecipientInput } from './notificationSubscriptionRecipientInput';
+import { NotificationType } from './notificationType';
 import { PageCheckout } from './pageCheckout';
 import { PageCheckoutTemplate } from './pageCheckoutTemplate';
+import { PageConnection } from './pageConnection';
+import { PageNotificationSubscription } from './pageNotificationSubscription';
 import { PagePaymentLink } from './pagePaymentLink';
 import { PagePaymentMethodDetail } from './pagePaymentMethodDetail';
 import { PageTheme } from './pageTheme';
@@ -204,6 +273,11 @@ import { PaymentSettlementStatus } from './paymentSettlementStatus';
 import { PaymentStatus } from './paymentStatus';
 import { PaymentSummary } from './paymentSummary';
 import { PaymentVoidReason } from './paymentVoidReason';
+import { Refund } from './refund';
+import { RefundCreateInput } from './refundCreateInput';
+import { RefundFailureReason } from './refundFailureReason';
+import { RefundStatus } from './refundStatus';
+import { ResourceType } from './resourceType';
 import { StartEnd } from './startEnd';
 import { StatementExportRequest } from './statementExportRequest';
 import { Theme } from './theme';
@@ -214,8 +288,10 @@ import { ThemeColors } from './themeColors';
 import { ThemeColorsCreateInput } from './themeColorsCreateInput';
 import { ThemeColorsUpdateInput } from './themeColorsUpdateInput';
 import { ThemeCreateInput } from './themeCreateInput';
+import { ThemeDesktopBackgroundImage } from './themeDesktopBackgroundImage';
 import { ThemeImageCreateInput } from './themeImageCreateInput';
 import { ThemeImageUpdateInput } from './themeImageUpdateInput';
+import { ThemeMobileBackgroundImage } from './themeMobileBackgroundImage';
 import { ThemePage } from './themePage';
 import { ThemePaymentMethodSelector } from './themePaymentMethodSelector';
 import { ThemePaymentMethodSelectorColors } from './themePaymentMethodSelectorColors';
@@ -247,15 +323,25 @@ let enumsMap: {[index: string]: any} = {
         "AccountStatementConnectionType": AccountStatementConnectionType,
         "AccountStatementInvoiceStatus": AccountStatementInvoiceStatus,
         "AccountStatementStatus": AccountStatementStatus,
+        "ActionType": ActionType,
+        "ActionTypeInput": ActionTypeInput,
+        "ActorType": ActorType,
         "ApplicationSource": ApplicationSource,
         "CheckoutAmountType": CheckoutAmountType,
         "CheckoutCustomerFieldType": CheckoutCustomerFieldType,
         "CheckoutMode": CheckoutMode,
+        "CheckoutReferenceType": CheckoutReferenceType,
         "CheckoutStatus": CheckoutStatus,
         "CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum": CheckoutTemplateCreateInput.EnabledPaymentMethodsEnum,
         "CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum": CheckoutTemplateUpdateInput.EnabledPaymentMethodsEnum,
+        "ConnectionOauthSignatureMethod": ConnectionOauthSignatureMethod,
+        "ConnectionStatus": ConnectionStatus,
+        "ConnectionType": ConnectionType,
         "ItemRestriction": ItemRestriction,
         "MoneyInput.CurrencyEnum": MoneyInput.CurrencyEnum,
+        "NotificationSubscriptionConfiguration.AllowedChannelsEnum": NotificationSubscriptionConfiguration.AllowedChannelsEnum,
+        "NotificationSubscriptionConfigurationInput.AllowedChannelsEnum": NotificationSubscriptionConfigurationInput.AllowedChannelsEnum,
+        "NotificationType": NotificationType,
         "PaymentActionMethod": PaymentActionMethod,
         "PaymentActionType": PaymentActionType,
         "PaymentCaptureType": PaymentCaptureType,
@@ -268,6 +354,9 @@ let enumsMap: {[index: string]: any} = {
         "PaymentSettlementStatus": PaymentSettlementStatus,
         "PaymentStatus": PaymentStatus,
         "PaymentVoidReason": PaymentVoidReason,
+        "RefundFailureReason": RefundFailureReason,
+        "RefundStatus": RefundStatus,
+        "ResourceType": ResourceType,
         "StatementExportRequest.ExportFormatEnum": StatementExportRequest.ExportFormatEnum,
         "WebhookEventType": WebhookEventType,
         "WebhookStatus": WebhookStatus,
@@ -278,6 +367,8 @@ let typeMap: {[index: string]: any} = {
     "AccountStatementConnection": AccountStatementConnection,
     "AccountStatementConnectionInput": AccountStatementConnectionInput,
     "AccountStatementCreateInput": AccountStatementCreateInput,
+    "AccountStatementCreditNote": AccountStatementCreditNote,
+    "AccountStatementCreditNoteCreateInput": AccountStatementCreditNoteCreateInput,
     "AccountStatementInvoice": AccountStatementInvoice,
     "AccountStatementInvoiceCreateInput": AccountStatementInvoiceCreateInput,
     "AccountStatementMagentoProxyConnection": AccountStatementMagentoProxyConnection,
@@ -295,6 +386,9 @@ let typeMap: {[index: string]: any} = {
     "CheckoutCustomerFields": CheckoutCustomerFields,
     "CheckoutCustomerFieldsInput": CheckoutCustomerFieldsInput,
     "CheckoutCustomerFieldsUpdateInput": CheckoutCustomerFieldsUpdateInput,
+    "CheckoutGooglePaySettings": CheckoutGooglePaySettings,
+    "CheckoutGooglePaySettingsInput": CheckoutGooglePaySettingsInput,
+    "CheckoutGooglePaySettingsUpdateInput": CheckoutGooglePaySettingsUpdateInput,
     "CheckoutPage": CheckoutPage,
     "CheckoutPayByBankSettings": CheckoutPayByBankSettings,
     "CheckoutPayByBankSettingsInput": CheckoutPayByBankSettingsInput,
@@ -306,16 +400,34 @@ let typeMap: {[index: string]: any} = {
     "CheckoutTemplateCreateInput": CheckoutTemplateCreateInput,
     "CheckoutTemplatePage": CheckoutTemplatePage,
     "CheckoutTemplateUpdateInput": CheckoutTemplateUpdateInput,
+    "Connection": Connection,
+    "ConnectionCreateInput": ConnectionCreateInput,
+    "ConnectionData": ConnectionData,
+    "ConnectionDataInput": ConnectionDataInput,
+    "ConnectionPage": ConnectionPage,
     "Customer": Customer,
     "CustomerInput": CustomerInput,
-    "Image": Image,
-    "ImageUrl": ImageUrl,
+    "GooglePayConnectionData": GooglePayConnectionData,
+    "GooglePayConnectionDataInput": GooglePayConnectionDataInput,
     "Item": Item,
     "ItemInput": ItemInput,
+    "LogCreateInput": LogCreateInput,
+    "LogRecord": LogRecord,
+    "MagentoProxyConnectionData": MagentoProxyConnectionData,
+    "MagentoProxyConnectionDataInput": MagentoProxyConnectionDataInput,
     "Money": Money,
     "MoneyInput": MoneyInput,
+    "NotificationSubscription": NotificationSubscription,
+    "NotificationSubscriptionConfiguration": NotificationSubscriptionConfiguration,
+    "NotificationSubscriptionConfigurationInput": NotificationSubscriptionConfigurationInput,
+    "NotificationSubscriptionCreateInput": NotificationSubscriptionCreateInput,
+    "NotificationSubscriptionPage": NotificationSubscriptionPage,
+    "NotificationSubscriptionRecipient": NotificationSubscriptionRecipient,
+    "NotificationSubscriptionRecipientInput": NotificationSubscriptionRecipientInput,
     "PageCheckout": PageCheckout,
     "PageCheckoutTemplate": PageCheckoutTemplate,
+    "PageConnection": PageConnection,
+    "PageNotificationSubscription": PageNotificationSubscription,
     "PagePaymentLink": PagePaymentLink,
     "PagePaymentMethodDetail": PagePaymentMethodDetail,
     "PageTheme": PageTheme,
@@ -335,6 +447,8 @@ let typeMap: {[index: string]: any} = {
     "PaymentSession": PaymentSession,
     "PaymentSessionCreateInput": PaymentSessionCreateInput,
     "PaymentSummary": PaymentSummary,
+    "Refund": Refund,
+    "RefundCreateInput": RefundCreateInput,
     "StartEnd": StartEnd,
     "StatementExportRequest": StatementExportRequest,
     "Theme": Theme,
@@ -345,8 +459,10 @@ let typeMap: {[index: string]: any} = {
     "ThemeColorsCreateInput": ThemeColorsCreateInput,
     "ThemeColorsUpdateInput": ThemeColorsUpdateInput,
     "ThemeCreateInput": ThemeCreateInput,
+    "ThemeDesktopBackgroundImage": ThemeDesktopBackgroundImage,
     "ThemeImageCreateInput": ThemeImageCreateInput,
     "ThemeImageUpdateInput": ThemeImageUpdateInput,
+    "ThemeMobileBackgroundImage": ThemeMobileBackgroundImage,
     "ThemePage": ThemePage,
     "ThemePaymentMethodSelector": ThemePaymentMethodSelector,
     "ThemePaymentMethodSelectorColors": ThemePaymentMethodSelectorColors,
