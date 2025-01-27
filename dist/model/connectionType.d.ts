@@ -14,5 +14,6 @@
 */
 export declare enum ConnectionType {
     MagentoProxy,
-    GooglePay
+    GooglePay,
+    Klarna
 }

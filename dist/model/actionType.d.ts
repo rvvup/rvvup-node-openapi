@@ -33,6 +33,7 @@ export declare enum ActionType {
     MerchantAddressUpdated,
     MerchantBankAccountUpdated,
     MerchantCredentialsCreated,
+    MerchantCredentialsDeleted,
     MerchantCredentialsRequested,
     MerchantCredentialsSecretRotated,
     MerchantAccountingReportDownload,

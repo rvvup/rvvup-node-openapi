@@ -32,6 +32,10 @@ export declare class MoneyInput {
 }
 export declare namespace MoneyInput {
     enum CurrencyEnum {
-        Gbp
+        Aed,
+        Eur,
+        Gbp,
+        Ron,
+        Usd
     }
 }

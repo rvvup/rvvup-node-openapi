@@ -24,5 +24,6 @@ export enum PaymentMethod {
     Card = <any> 'CARD',
     ApplePay = <any> 'APPLE_PAY',
     GooglePay = <any> 'GOOGLE_PAY',
-    PayByBank = <any> 'PAY_BY_BANK'
+    PayByBank = <any> 'PAY_BY_BANK',
+    Klarna = <any> 'KLARNA'
 }

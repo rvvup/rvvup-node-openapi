@@ -47,6 +47,10 @@ class PaymentSession {
     */
     'merchantId';
     /**
+    * The URL that the customer was on when the payment session was created.
+    */
+    'originUrl';
+    /**
     * The ID of the payment link that the payment session was created from.
     */
     'paymentLinkId';
@@ -127,6 +131,11 @@ class PaymentSession {
         {
             "name": "merchantId",
             "baseName": "merchantId",
+            "type": "string"
+        },
+        {
+            "name": "originUrl",
+            "baseName": "originUrl",
             "type": "string"
         },
         {

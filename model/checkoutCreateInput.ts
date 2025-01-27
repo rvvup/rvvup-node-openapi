@@ -44,6 +44,10 @@ export class CheckoutCreateInput {
     */
     'modeId'?: string;
     /**
+    * The URL that the customer was on when the checkout was created.
+    */
+    'originUrl'?: string;
+    /**
     * The URL to redirect the user to if the checkout falls into a pending payment flow.                          This field supports the template variable `{{CHECKOUT_ID}}` which will be replaced with the                          created checkouts ID.
     */
     'pendingUrl'?: string;
@@ -103,6 +107,11 @@ export class CheckoutCreateInput {
         {
             "name": "modeId",
             "baseName": "modeId",
+            "type": "string"
+        },
+        {
+            "name": "originUrl",
+            "baseName": "originUrl",
             "type": "string"
         },
         {

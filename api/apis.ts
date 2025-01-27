@@ -16,6 +16,8 @@ export * from './paymentMethodsApi';
 import { PaymentMethodsApi } from './paymentMethodsApi';
 export * from './paymentSessionsApi';
 import { PaymentSessionsApi } from './paymentSessionsApi';
+export * from './paymentSettingsApi';
+import { PaymentSettingsApi } from './paymentSettingsApi';
 export * from './refundsApi';
 import { RefundsApi } from './refundsApi';
 export * from './statementExportsApi';
@@ -35,4 +37,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountStatementsApi, CheckoutTemplatesApi, CheckoutsApi, ConnectionsApi, LogsApi, NotificationsApi, PaymentLinksApi, PaymentMethodsApi, PaymentSessionsApi, RefundsApi, StatementExportsApi, ThemesApi, WebhooksApi];
+export const APIS = [AccountStatementsApi, CheckoutTemplatesApi, CheckoutsApi, ConnectionsApi, LogsApi, NotificationsApi, PaymentLinksApi, PaymentMethodsApi, PaymentSessionsApi, PaymentSettingsApi, RefundsApi, StatementExportsApi, ThemesApi, WebhooksApi];

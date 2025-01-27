@@ -43,6 +43,10 @@ export class MoneyInput {
 
 export namespace MoneyInput {
     export enum CurrencyEnum {
-        Gbp = <any> 'GBP'
+        Aed = <any> 'AED',
+        Eur = <any> 'EUR',
+        Gbp = <any> 'GBP',
+        Ron = <any> 'RON',
+        Usd = <any> 'USD'
     }
 }

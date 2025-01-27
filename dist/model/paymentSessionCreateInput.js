@@ -27,8 +27,14 @@ class PaymentSessionCreateInput {
     * List of items that the customer is purchasing.
     */
     'items';
+    'metadata';
+    /**
+    * The URL that the customer was on when the payment session was created.
+    */
+    'originUrl';
     'paymentCaptureType';
     'paymentMethod';
+    'paymentType';
     /**
     * Whether the customer is required to provide a shipping address.
     */
@@ -69,6 +75,16 @@ class PaymentSessionCreateInput {
             "type": "Array<ItemInput>"
         },
         {
+            "name": "metadata",
+            "baseName": "metadata",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "originUrl",
+            "baseName": "originUrl",
+            "type": "string"
+        },
+        {
             "name": "paymentCaptureType",
             "baseName": "paymentCaptureType",
             "type": "PaymentCaptureType"
@@ -77,6 +93,11 @@ class PaymentSessionCreateInput {
             "name": "paymentMethod",
             "baseName": "paymentMethod",
             "type": "PaymentMethod"
+        },
+        {
+            "name": "paymentType",
+            "baseName": "paymentType",
+            "type": "PaymentType"
         },
         {
             "name": "requiresShipping",

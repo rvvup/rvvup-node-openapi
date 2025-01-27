@@ -54,6 +54,10 @@ export class PaymentSession {
     */
     'merchantId': string;
     /**
+    * The URL that the customer was on when the payment session was created.
+    */
+    'originUrl'?: string;
+    /**
     * The ID of the payment link that the payment session was created from.
     */
     'paymentLinkId'?: string;
@@ -136,6 +140,11 @@ export class PaymentSession {
         {
             "name": "merchantId",
             "baseName": "merchantId",
+            "type": "string"
+        },
+        {
+            "name": "originUrl",
+            "baseName": "originUrl",
             "type": "string"
         },
         {

@@ -11,6 +11,9 @@
  */
 import { Pageable } from './pageable';
 import { PaymentMethodDetail } from './paymentMethodDetail';
+/**
+* Payment methods and their settings
+*/
 export declare class PagePaymentMethodDetail {
     'pageable': Pageable;
     'results': Array<PaymentMethodDetail>;

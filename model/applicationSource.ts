@@ -21,6 +21,7 @@ export enum ApplicationSource {
     Moto = <any> 'MOTO',
     DashboardMoto = <any> 'DASHBOARD_MOTO',
     DashboardPaymentLink = <any> 'DASHBOARD_PAYMENT_LINK',
+    MagentoCheckout = <any> 'MAGENTO_CHECKOUT',
     MagentoMoto = <any> 'MAGENTO_MOTO',
     MagentoPaymentLink = <any> 'MAGENTO_PAYMENT_LINK',
     MagentoAxInvoice = <any> 'MAGENTO_AX_INVOICE',

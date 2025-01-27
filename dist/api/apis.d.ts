@@ -16,6 +16,8 @@ export * from './paymentMethodsApi';
 import { PaymentMethodsApi } from './paymentMethodsApi';
 export * from './paymentSessionsApi';
 import { PaymentSessionsApi } from './paymentSessionsApi';
+export * from './paymentSettingsApi';
+import { PaymentSettingsApi } from './paymentSettingsApi';
 export * from './refundsApi';
 import { RefundsApi } from './refundsApi';
 export * from './statementExportsApi';
@@ -32,4 +34,4 @@ export declare class HttpError extends Error {
     constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export { RequestFile } from '../model/models';
-export declare const APIS: (typeof AccountStatementsApi | typeof CheckoutTemplatesApi | typeof CheckoutsApi | typeof ConnectionsApi | typeof LogsApi | typeof NotificationsApi | typeof PaymentLinksApi | typeof PaymentMethodsApi | typeof PaymentSessionsApi | typeof RefundsApi | typeof StatementExportsApi | typeof ThemesApi | typeof WebhooksApi)[];
+export declare const APIS: (typeof AccountStatementsApi | typeof CheckoutTemplatesApi | typeof CheckoutsApi | typeof ConnectionsApi | typeof LogsApi | typeof NotificationsApi | typeof PaymentLinksApi | typeof PaymentMethodsApi | typeof PaymentSessionsApi | typeof PaymentSettingsApi | typeof RefundsApi | typeof StatementExportsApi | typeof ThemesApi | typeof WebhooksApi)[];

@@ -22,6 +22,7 @@ var ApplicationSource;
     ApplicationSource[ApplicationSource["Moto"] = 'MOTO'] = "Moto";
     ApplicationSource[ApplicationSource["DashboardMoto"] = 'DASHBOARD_MOTO'] = "DashboardMoto";
     ApplicationSource[ApplicationSource["DashboardPaymentLink"] = 'DASHBOARD_PAYMENT_LINK'] = "DashboardPaymentLink";
+    ApplicationSource[ApplicationSource["MagentoCheckout"] = 'MAGENTO_CHECKOUT'] = "MagentoCheckout";
     ApplicationSource[ApplicationSource["MagentoMoto"] = 'MAGENTO_MOTO'] = "MagentoMoto";
     ApplicationSource[ApplicationSource["MagentoPaymentLink"] = 'MAGENTO_PAYMENT_LINK'] = "MagentoPaymentLink";
     ApplicationSource[ApplicationSource["MagentoAxInvoice"] = 'MAGENTO_AX_INVOICE'] = "MagentoAxInvoice";

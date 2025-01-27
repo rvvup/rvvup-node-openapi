@@ -14,6 +14,9 @@ import { RequestFile } from './models';
 import { Pageable } from './pageable';
 import { PaymentMethodDetail } from './paymentMethodDetail';
 
+/**
+* Payment methods and their settings
+*/
 export class PagePaymentMethodDetail {
     'pageable': Pageable;
     'results': Array<PaymentMethodDetail>;

@@ -17,5 +17,6 @@ import { RequestFile } from './models';
 */
 export enum ConnectionType {
     MagentoProxy = <any> 'MAGENTO_PROXY',
-    GooglePay = <any> 'GOOGLE_PAY'
+    GooglePay = <any> 'GOOGLE_PAY',
+    Klarna = <any> 'KLARNA'
 }

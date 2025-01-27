@@ -42,7 +42,11 @@ exports.MoneyInput = MoneyInput;
 (function (MoneyInput) {
     let CurrencyEnum;
     (function (CurrencyEnum) {
+        CurrencyEnum[CurrencyEnum["Aed"] = 'AED'] = "Aed";
+        CurrencyEnum[CurrencyEnum["Eur"] = 'EUR'] = "Eur";
         CurrencyEnum[CurrencyEnum["Gbp"] = 'GBP'] = "Gbp";
+        CurrencyEnum[CurrencyEnum["Ron"] = 'RON'] = "Ron";
+        CurrencyEnum[CurrencyEnum["Usd"] = 'USD'] = "Usd";
     })(CurrencyEnum = MoneyInput.CurrencyEnum || (MoneyInput.CurrencyEnum = {}));
 })(MoneyInput || (exports.MoneyInput = MoneyInput = {}));
 //# sourceMappingURL=moneyInput.js.map

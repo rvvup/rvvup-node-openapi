@@ -37,6 +37,7 @@ var ActionType;
     ActionType[ActionType["MerchantAddressUpdated"] = 'MERCHANT_ADDRESS_UPDATED'] = "MerchantAddressUpdated";
     ActionType[ActionType["MerchantBankAccountUpdated"] = 'MERCHANT_BANK_ACCOUNT_UPDATED'] = "MerchantBankAccountUpdated";
     ActionType[ActionType["MerchantCredentialsCreated"] = 'MERCHANT_CREDENTIALS_CREATED'] = "MerchantCredentialsCreated";
+    ActionType[ActionType["MerchantCredentialsDeleted"] = 'MERCHANT_CREDENTIALS_DELETED'] = "MerchantCredentialsDeleted";
     ActionType[ActionType["MerchantCredentialsRequested"] = 'MERCHANT_CREDENTIALS_REQUESTED'] = "MerchantCredentialsRequested";
     ActionType[ActionType["MerchantCredentialsSecretRotated"] = 'MERCHANT_CREDENTIALS_SECRET_ROTATED'] = "MerchantCredentialsSecretRotated";
     ActionType[ActionType["MerchantAccountingReportDownload"] = 'MERCHANT_ACCOUNTING_REPORT_DOWNLOAD'] = "MerchantAccountingReportDownload";

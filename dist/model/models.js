@@ -74,15 +74,19 @@ __exportStar(require("./connectionStatus"), exports);
 __exportStar(require("./connectionType"), exports);
 __exportStar(require("./customer"), exports);
 __exportStar(require("./customerInput"), exports);
+__exportStar(require("./expressCheckoutDisplayIntent"), exports);
 __exportStar(require("./googlePayConnectionData"), exports);
 __exportStar(require("./googlePayConnectionDataInput"), exports);
 __exportStar(require("./item"), exports);
 __exportStar(require("./itemInput"), exports);
 __exportStar(require("./itemRestriction"), exports);
+__exportStar(require("./klarnaConnectionData"), exports);
+__exportStar(require("./klarnaConnectionDataInput"), exports);
 __exportStar(require("./logCreateInput"), exports);
 __exportStar(require("./logRecord"), exports);
 __exportStar(require("./magentoProxyConnectionData"), exports);
 __exportStar(require("./magentoProxyConnectionDataInput"), exports);
+__exportStar(require("./merchantLogoWithUrls"), exports);
 __exportStar(require("./money"), exports);
 __exportStar(require("./moneyInput"), exports);
 __exportStar(require("./notificationSubscription"), exports);
@@ -124,9 +128,13 @@ __exportStar(require("./paymentMethodTotalLimit"), exports);
 __exportStar(require("./paymentSession"), exports);
 __exportStar(require("./paymentSessionCreateInput"), exports);
 __exportStar(require("./paymentSessionStatus"), exports);
+__exportStar(require("./paymentSettings"), exports);
+__exportStar(require("./paymentSettingsContext"), exports);
+__exportStar(require("./paymentSettingsMerchant"), exports);
 __exportStar(require("./paymentSettlementStatus"), exports);
 __exportStar(require("./paymentStatus"), exports);
 __exportStar(require("./paymentSummary"), exports);
+__exportStar(require("./paymentType"), exports);
 __exportStar(require("./paymentVoidReason"), exports);
 __exportStar(require("./refund"), exports);
 __exportStar(require("./refundCreateInput"), exports);
@@ -220,15 +228,19 @@ const connectionStatus_1 = require("./connectionStatus");
 const connectionType_1 = require("./connectionType");
 const customer_1 = require("./customer");
 const customerInput_1 = require("./customerInput");
+const expressCheckoutDisplayIntent_1 = require("./expressCheckoutDisplayIntent");
 const googlePayConnectionData_1 = require("./googlePayConnectionData");
 const googlePayConnectionDataInput_1 = require("./googlePayConnectionDataInput");
 const item_1 = require("./item");
 const itemInput_1 = require("./itemInput");
 const itemRestriction_1 = require("./itemRestriction");
+const klarnaConnectionData_1 = require("./klarnaConnectionData");
+const klarnaConnectionDataInput_1 = require("./klarnaConnectionDataInput");
 const logCreateInput_1 = require("./logCreateInput");
 const logRecord_1 = require("./logRecord");
 const magentoProxyConnectionData_1 = require("./magentoProxyConnectionData");
 const magentoProxyConnectionDataInput_1 = require("./magentoProxyConnectionDataInput");
+const merchantLogoWithUrls_1 = require("./merchantLogoWithUrls");
 const money_1 = require("./money");
 const moneyInput_1 = require("./moneyInput");
 const notificationSubscription_1 = require("./notificationSubscription");
@@ -270,9 +282,13 @@ const paymentMethodTotalLimit_1 = require("./paymentMethodTotalLimit");
 const paymentSession_1 = require("./paymentSession");
 const paymentSessionCreateInput_1 = require("./paymentSessionCreateInput");
 const paymentSessionStatus_1 = require("./paymentSessionStatus");
+const paymentSettings_1 = require("./paymentSettings");
+const paymentSettingsContext_1 = require("./paymentSettingsContext");
+const paymentSettingsMerchant_1 = require("./paymentSettingsMerchant");
 const paymentSettlementStatus_1 = require("./paymentSettlementStatus");
 const paymentStatus_1 = require("./paymentStatus");
 const paymentSummary_1 = require("./paymentSummary");
+const paymentType_1 = require("./paymentType");
 const paymentVoidReason_1 = require("./paymentVoidReason");
 const refund_1 = require("./refund");
 const refundCreateInput_1 = require("./refundCreateInput");
@@ -336,6 +352,7 @@ let enumsMap = {
     "ConnectionOauthSignatureMethod": connectionOauthSignatureMethod_1.ConnectionOauthSignatureMethod,
     "ConnectionStatus": connectionStatus_1.ConnectionStatus,
     "ConnectionType": connectionType_1.ConnectionType,
+    "ExpressCheckoutDisplayIntent": expressCheckoutDisplayIntent_1.ExpressCheckoutDisplayIntent,
     "ItemRestriction": itemRestriction_1.ItemRestriction,
     "MoneyInput.CurrencyEnum": moneyInput_1.MoneyInput.CurrencyEnum,
     "NotificationSubscriptionConfiguration.AllowedChannelsEnum": notificationSubscriptionConfiguration_1.NotificationSubscriptionConfiguration.AllowedChannelsEnum,
@@ -352,6 +369,7 @@ let enumsMap = {
     "PaymentSessionStatus": paymentSessionStatus_1.PaymentSessionStatus,
     "PaymentSettlementStatus": paymentSettlementStatus_1.PaymentSettlementStatus,
     "PaymentStatus": paymentStatus_1.PaymentStatus,
+    "PaymentType": paymentType_1.PaymentType,
     "PaymentVoidReason": paymentVoidReason_1.PaymentVoidReason,
     "RefundFailureReason": refundFailureReason_1.RefundFailureReason,
     "RefundStatus": refundStatus_1.RefundStatus,
@@ -409,10 +427,13 @@ let typeMap = {
     "GooglePayConnectionDataInput": googlePayConnectionDataInput_1.GooglePayConnectionDataInput,
     "Item": item_1.Item,
     "ItemInput": itemInput_1.ItemInput,
+    "KlarnaConnectionData": klarnaConnectionData_1.KlarnaConnectionData,
+    "KlarnaConnectionDataInput": klarnaConnectionDataInput_1.KlarnaConnectionDataInput,
     "LogCreateInput": logCreateInput_1.LogCreateInput,
     "LogRecord": logRecord_1.LogRecord,
     "MagentoProxyConnectionData": magentoProxyConnectionData_1.MagentoProxyConnectionData,
     "MagentoProxyConnectionDataInput": magentoProxyConnectionDataInput_1.MagentoProxyConnectionDataInput,
+    "MerchantLogoWithUrls": merchantLogoWithUrls_1.MerchantLogoWithUrls,
     "Money": money_1.Money,
     "MoneyInput": moneyInput_1.MoneyInput,
     "NotificationSubscription": notificationSubscription_1.NotificationSubscription,
@@ -444,6 +465,9 @@ let typeMap = {
     "PaymentMethodTotalLimit": paymentMethodTotalLimit_1.PaymentMethodTotalLimit,
     "PaymentSession": paymentSession_1.PaymentSession,
     "PaymentSessionCreateInput": paymentSessionCreateInput_1.PaymentSessionCreateInput,
+    "PaymentSettings": paymentSettings_1.PaymentSettings,
+    "PaymentSettingsContext": paymentSettingsContext_1.PaymentSettingsContext,
+    "PaymentSettingsMerchant": paymentSettingsMerchant_1.PaymentSettingsMerchant,
     "PaymentSummary": paymentSummary_1.PaymentSummary,
     "Refund": refund_1.Refund,
     "RefundCreateInput": refundCreateInput_1.RefundCreateInput,

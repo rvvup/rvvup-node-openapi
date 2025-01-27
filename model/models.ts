@@ -59,15 +59,19 @@ export * from './connectionStatus';
 export * from './connectionType';
 export * from './customer';
 export * from './customerInput';
+export * from './expressCheckoutDisplayIntent';
 export * from './googlePayConnectionData';
 export * from './googlePayConnectionDataInput';
 export * from './item';
 export * from './itemInput';
 export * from './itemRestriction';
+export * from './klarnaConnectionData';
+export * from './klarnaConnectionDataInput';
 export * from './logCreateInput';
 export * from './logRecord';
 export * from './magentoProxyConnectionData';
 export * from './magentoProxyConnectionDataInput';
+export * from './merchantLogoWithUrls';
 export * from './money';
 export * from './moneyInput';
 export * from './notificationSubscription';
@@ -109,9 +113,13 @@ export * from './paymentMethodTotalLimit';
 export * from './paymentSession';
 export * from './paymentSessionCreateInput';
 export * from './paymentSessionStatus';
+export * from './paymentSettings';
+export * from './paymentSettingsContext';
+export * from './paymentSettingsMerchant';
 export * from './paymentSettlementStatus';
 export * from './paymentStatus';
 export * from './paymentSummary';
+export * from './paymentType';
 export * from './paymentVoidReason';
 export * from './refund';
 export * from './refundCreateInput';
@@ -219,15 +227,19 @@ import { ConnectionStatus } from './connectionStatus';
 import { ConnectionType } from './connectionType';
 import { Customer } from './customer';
 import { CustomerInput } from './customerInput';
+import { ExpressCheckoutDisplayIntent } from './expressCheckoutDisplayIntent';
 import { GooglePayConnectionData } from './googlePayConnectionData';
 import { GooglePayConnectionDataInput } from './googlePayConnectionDataInput';
 import { Item } from './item';
 import { ItemInput } from './itemInput';
 import { ItemRestriction } from './itemRestriction';
+import { KlarnaConnectionData } from './klarnaConnectionData';
+import { KlarnaConnectionDataInput } from './klarnaConnectionDataInput';
 import { LogCreateInput } from './logCreateInput';
 import { LogRecord } from './logRecord';
 import { MagentoProxyConnectionData } from './magentoProxyConnectionData';
 import { MagentoProxyConnectionDataInput } from './magentoProxyConnectionDataInput';
+import { MerchantLogoWithUrls } from './merchantLogoWithUrls';
 import { Money } from './money';
 import { MoneyInput } from './moneyInput';
 import { NotificationSubscription } from './notificationSubscription';
@@ -269,9 +281,13 @@ import { PaymentMethodTotalLimit } from './paymentMethodTotalLimit';
 import { PaymentSession } from './paymentSession';
 import { PaymentSessionCreateInput } from './paymentSessionCreateInput';
 import { PaymentSessionStatus } from './paymentSessionStatus';
+import { PaymentSettings } from './paymentSettings';
+import { PaymentSettingsContext } from './paymentSettingsContext';
+import { PaymentSettingsMerchant } from './paymentSettingsMerchant';
 import { PaymentSettlementStatus } from './paymentSettlementStatus';
 import { PaymentStatus } from './paymentStatus';
 import { PaymentSummary } from './paymentSummary';
+import { PaymentType } from './paymentType';
 import { PaymentVoidReason } from './paymentVoidReason';
 import { Refund } from './refund';
 import { RefundCreateInput } from './refundCreateInput';
@@ -337,6 +353,7 @@ let enumsMap: {[index: string]: any} = {
         "ConnectionOauthSignatureMethod": ConnectionOauthSignatureMethod,
         "ConnectionStatus": ConnectionStatus,
         "ConnectionType": ConnectionType,
+        "ExpressCheckoutDisplayIntent": ExpressCheckoutDisplayIntent,
         "ItemRestriction": ItemRestriction,
         "MoneyInput.CurrencyEnum": MoneyInput.CurrencyEnum,
         "NotificationSubscriptionConfiguration.AllowedChannelsEnum": NotificationSubscriptionConfiguration.AllowedChannelsEnum,
@@ -353,6 +370,7 @@ let enumsMap: {[index: string]: any} = {
         "PaymentSessionStatus": PaymentSessionStatus,
         "PaymentSettlementStatus": PaymentSettlementStatus,
         "PaymentStatus": PaymentStatus,
+        "PaymentType": PaymentType,
         "PaymentVoidReason": PaymentVoidReason,
         "RefundFailureReason": RefundFailureReason,
         "RefundStatus": RefundStatus,
@@ -411,10 +429,13 @@ let typeMap: {[index: string]: any} = {
     "GooglePayConnectionDataInput": GooglePayConnectionDataInput,
     "Item": Item,
     "ItemInput": ItemInput,
+    "KlarnaConnectionData": KlarnaConnectionData,
+    "KlarnaConnectionDataInput": KlarnaConnectionDataInput,
     "LogCreateInput": LogCreateInput,
     "LogRecord": LogRecord,
     "MagentoProxyConnectionData": MagentoProxyConnectionData,
     "MagentoProxyConnectionDataInput": MagentoProxyConnectionDataInput,
+    "MerchantLogoWithUrls": MerchantLogoWithUrls,
     "Money": Money,
     "MoneyInput": MoneyInput,
     "NotificationSubscription": NotificationSubscription,
@@ -446,6 +467,9 @@ let typeMap: {[index: string]: any} = {
     "PaymentMethodTotalLimit": PaymentMethodTotalLimit,
     "PaymentSession": PaymentSession,
     "PaymentSessionCreateInput": PaymentSessionCreateInput,
+    "PaymentSettings": PaymentSettings,
+    "PaymentSettingsContext": PaymentSettingsContext,
+    "PaymentSettingsMerchant": PaymentSettingsMerchant,
     "PaymentSummary": PaymentSummary,
     "Refund": Refund,
     "RefundCreateInput": RefundCreateInput,

@@ -19,5 +19,6 @@ var ConnectionType;
 (function (ConnectionType) {
     ConnectionType[ConnectionType["MagentoProxy"] = 'MAGENTO_PROXY'] = "MagentoProxy";
     ConnectionType[ConnectionType["GooglePay"] = 'GOOGLE_PAY'] = "GooglePay";
+    ConnectionType[ConnectionType["Klarna"] = 'KLARNA'] = "Klarna";
 })(ConnectionType || (exports.ConnectionType = ConnectionType = {}));
 //# sourceMappingURL=connectionType.js.map

@@ -60,6 +60,10 @@ export declare class Checkout {
     */
     'modeId': string;
     /**
+    * The URL that the customer was on when the checkout was created.
+    */
+    'originUrl'?: string;
+    /**
     * The ID of the payment link that was used to create this checkout.This field is deprecated and will be removed in a future version.Use the modeId field instead.
     */
     'paymentLinkId'?: string;
@@ -81,6 +85,10 @@ export declare class Checkout {
     * The URL to redirect the customer to after the checkout is completed successfully.
     */
     'successUrl'?: string;
+    /**
+    * The checkout session token.
+    */
+    'token': string;
     /**
     * The datetime when the checkout was last updated.
     */

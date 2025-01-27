@@ -36,6 +36,7 @@ export enum ActionType {
     MerchantAddressUpdated = <any> 'MERCHANT_ADDRESS_UPDATED',
     MerchantBankAccountUpdated = <any> 'MERCHANT_BANK_ACCOUNT_UPDATED',
     MerchantCredentialsCreated = <any> 'MERCHANT_CREDENTIALS_CREATED',
+    MerchantCredentialsDeleted = <any> 'MERCHANT_CREDENTIALS_DELETED',
     MerchantCredentialsRequested = <any> 'MERCHANT_CREDENTIALS_REQUESTED',
     MerchantCredentialsSecretRotated = <any> 'MERCHANT_CREDENTIALS_SECRET_ROTATED',
     MerchantAccountingReportDownload = <any> 'MERCHANT_ACCOUNTING_REPORT_DOWNLOAD',

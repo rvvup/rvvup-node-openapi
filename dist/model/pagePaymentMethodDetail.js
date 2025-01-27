@@ -12,6 +12,9 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PagePaymentMethodDetail = void 0;
+/**
+* Payment methods and their settings
+*/
 class PagePaymentMethodDetail {
     'pageable';
     'results';

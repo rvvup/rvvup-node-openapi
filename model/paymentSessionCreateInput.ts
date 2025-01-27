@@ -17,6 +17,7 @@ import { ItemInput } from './itemInput';
 import { MoneyInput } from './moneyInput';
 import { PaymentCaptureType } from './paymentCaptureType';
 import { PaymentMethod } from './paymentMethod';
+import { PaymentType } from './paymentType';
 
 /**
 * Input for creating a payment session.
@@ -33,8 +34,14 @@ export class PaymentSessionCreateInput {
     * List of items that the customer is purchasing.
     */
     'items'?: Array<ItemInput>;
+    'metadata'?: { [key: string]: string; };
+    /**
+    * The URL that the customer was on when the payment session was created.
+    */
+    'originUrl'?: string;
     'paymentCaptureType'?: PaymentCaptureType;
     'paymentMethod': PaymentMethod;
+    'paymentType'?: PaymentType;
     /**
     * Whether the customer is required to provide a shipping address.
     */
@@ -77,6 +84,16 @@ export class PaymentSessionCreateInput {
             "type": "Array<ItemInput>"
         },
         {
+            "name": "metadata",
+            "baseName": "metadata",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "originUrl",
+            "baseName": "originUrl",
+            "type": "string"
+        },
+        {
             "name": "paymentCaptureType",
             "baseName": "paymentCaptureType",
             "type": "PaymentCaptureType"
@@ -85,6 +102,11 @@ export class PaymentSessionCreateInput {
             "name": "paymentMethod",
             "baseName": "paymentMethod",
             "type": "PaymentMethod"
+        },
+        {
+            "name": "paymentType",
+            "baseName": "paymentType",
+            "type": "PaymentType"
         },
         {
             "name": "requiresShipping",

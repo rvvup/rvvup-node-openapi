@@ -26,5 +26,6 @@ var PaymentMethod;
     PaymentMethod[PaymentMethod["ApplePay"] = 'APPLE_PAY'] = "ApplePay";
     PaymentMethod[PaymentMethod["GooglePay"] = 'GOOGLE_PAY'] = "GooglePay";
     PaymentMethod[PaymentMethod["PayByBank"] = 'PAY_BY_BANK'] = "PayByBank";
+    PaymentMethod[PaymentMethod["Klarna"] = 'KLARNA'] = "Klarna";
 })(PaymentMethod || (exports.PaymentMethod = PaymentMethod = {}));
 //# sourceMappingURL=paymentMethod.js.map
