@@ -1,6 +1,6 @@
 {
   "name": "@rvvup/node-openapi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "NodeJS client for @rvvup/node-openapi",
   "repository": {
     "type": "git",
